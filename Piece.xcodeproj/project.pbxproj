@@ -14,6 +14,7 @@
 		7D4763071BEA4B8D007CF6E6 /* Piece.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D4763051BEA4B8D007CF6E6 /* Piece.xcdatamodeld */; };
 		7D4763091BEA4B8D007CF6E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4763081BEA4B8D007CF6E6 /* Assets.xcassets */; };
 		7D47630C1BEA4B8D007CF6E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D47630A1BEA4B8D007CF6E6 /* LaunchScreen.storyboard */; };
+		7D8A88DA1BEF98F5003FEF54 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		7D4763081BEA4B8D007CF6E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D47630B1BEA4B8D007CF6E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D47630D1BEA4B8D007CF6E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D8A88D81BEF98F5003FEF54 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 				7D4762FD1BEA4B8D007CF6E6 /* AppDelegate.m */,
 				7D4762FF1BEA4B8D007CF6E6 /* ViewController.h */,
 				7D4763001BEA4B8D007CF6E6 /* ViewController.m */,
+				7D8A88D81BEF98F5003FEF54 /* RegisterViewController.h */,
+				7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */,
 				7D4763021BEA4B8D007CF6E6 /* Main.storyboard */,
 				7D4763081BEA4B8D007CF6E6 /* Assets.xcassets */,
 				7D47630A1BEA4B8D007CF6E6 /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D8A88DA1BEF98F5003FEF54 /* RegisterViewController.m in Sources */,
 				7D4763071BEA4B8D007CF6E6 /* Piece.xcdatamodeld in Sources */,
 				7D4763011BEA4B8D007CF6E6 /* ViewController.m in Sources */,
 				7D4762FE1BEA4B8D007CF6E6 /* AppDelegate.m in Sources */,
@@ -302,6 +308,7 @@
 				7D4763121BEA4B8D007CF6E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
