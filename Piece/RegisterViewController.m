@@ -9,6 +9,9 @@
 #import "RegisterViewController.h"
 
 @interface RegisterViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
+@property (weak, nonatomic) IBOutlet UITextField *passwordText;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
@@ -17,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.passwordLabel setHidden:YES];
+    [self.passwordText setHidden:YES];
+    [self.nextButton setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
