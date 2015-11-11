@@ -146,6 +146,9 @@
                                     <constraint firstAttribute="width" constant="87" id="d3y-FI-17z"/>
                                 </constraints>
                                 <state key="normal" title="verify code"/>
+                                <connections>
+                                    <action selector="verifyCode:" destination="Zon-oE-BBR" eventType="touchUpInside" id="hGE-dY-pcY"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zII-T7-7js">
                                 <rect key="frame" x="122" y="214" width="97" height="30"/>
@@ -213,6 +216,9 @@
                         <outlet property="nextButton" destination="iZ8-uC-9MN" id="dsR-hP-bag"/>
                         <outlet property="passwordLabel" destination="f1F-ps-est" id="Wmo-Pe-Bzz"/>
                         <outlet property="passwordText" destination="sNz-c6-CPx" id="b5H-r7-1MO"/>
+                        <outlet property="phonenumberText" destination="wGf-83-LRc" id="y7H-ot-bTk"/>
+                        <outlet property="verifyButton" destination="ia7-ij-cKm" id="IMq-W7-hHg"/>
+                        <outlet property="verifynumberText" destination="zII-T7-7js" id="6K6-me-v6t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0eB-L1-gGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
