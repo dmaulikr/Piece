@@ -17,51 +17,71 @@
 @property (weak, nonatomic) IBOutlet UITextField *phonenumberText;
 @property (weak, nonatomic) IBOutlet UITextField *verifynumberText;
 
+
 @end
 
 @implementation RegisterViewController
 
+bool isVerified = NO;
+
+- (void)textFieldChanged:(id)sender {
+    UITextField *_field = (UITextField *)sender;
+    if (/*isVerified && */_field.text.length >0) {
+        [self.verifyButton setTitle:@"confirm" forState:UIControlStateNormal];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.verifynumberText addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    
     [self.passwordLabel setHidden:YES];
     [self.passwordText setHidden:YES];
     [self.nextButton setHidden:YES];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)verifyCode:(id)sender {
-    if (self.phonenumberText.text.length > 0)
-    {
+    if (!isVerified && self.phonenumberText.text.length > 0) {
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS
          //这个参数可以选择是通过发送验证码还是语言来获取验证码
                                 phoneNumber:self.phonenumberText.text
+                                       zone:@"86"
+                           customIdentifier:nil //自定义短信模板标识
+                                 result:^(NSError *error) {
+                                     if (!error) {
+                                         NSLog(@"block 获取验证码成功");
+                                         isVerified = YES;
+            
+                                     } else {
+            
+                                         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"codesenderrtitle", nil)
+                                                                                         message:[NSString stringWithFormat:@"%@",[error.userInfo objectForKey:@"getVerificationCode"]]
+                                                                                        delegate:self
+                                                                               cancelButtonTitle:NSLocalizedString(@"sure", nil)
+                                                                               otherButtonTitles:nil, nil];
+                                         [alert show];
+            
+                                     }
+                                 }];
+    }
+    
+    if (isVerified && self.verifynumberText.text.length >0) {
+   
+        [SMSSDK  commitVerificationCode:self.verifynumberText.text
+                            phoneNumber:self.phonenumberText.text
                                    zone:@"86"
-                       customIdentifier:nil //自定义短信模板标识
-                                 result:^(NSError *error)
-         {
-        
-             if (!error)
-             {
-                 NSLog(@"block 获取验证码成功");
-            
-             }
-             else
-             {
-            
-                 UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"codesenderrtitle", nil)
-                                                                 message:[NSString stringWithFormat:@"%@",[error.userInfo objectForKey:@"getVerificationCode"]]
-                                                                delegate:self
-                                                       cancelButtonTitle:NSLocalizedString(@"sure", nil)
-                                                       otherButtonTitles:nil, nil];
-                 [alert show];
-            
-             }
-        
-         }];
+                                 result:^(NSError *error) {
+                                     if (!error) {
+                                         NSLog(@"验证成功");
+                                     } else {
+                                         NSLog(@"验证失败");
+                                     }
+                                 }];
     }
 }
 
