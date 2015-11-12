@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *verifyButton;
 @property (weak, nonatomic) IBOutlet UITextField *phonenumberText;
 @property (weak, nonatomic) IBOutlet UITextField *verifynumberText;
+@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 
 
 @end
@@ -24,27 +25,47 @@
 
 bool isVerified = NO;
 
-- (void)textFieldChanged:(id)sender {
-    UITextField *_field = (UITextField *)sender;
-    if (/*isVerified && */_field.text.length >0) {
-        [self.verifyButton setTitle:@"confirm" forState:UIControlStateNormal];
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.verifynumberText addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     
-    [self.passwordLabel setHidden:YES];
-    [self.passwordText setHidden:YES];
-    [self.nextButton setHidden:YES];
+    [self setVerifyHidden:YES];
+
+}
+
+- (void)setPasswordHidden: (bool)isHidden {
+    [self.passwordLabel setHidden:isHidden];
+    [self.passwordText setHidden:isHidden];
+    [self.nextButton setHidden:isHidden];
+}
+
+- (void)setVerifyHidden: (bool)isHidden {
+    [self.verifynumberText setHidden:isHidden];
+    [self.verifyButton setHidden:isHidden];
+    [self.confirmButton setHidden:isHidden];
+}
+
+- (IBAction)confirmPhoneNumber:(id)sender {
+    
+    if (isVerified && self.verifynumberText.text.length >0 && self.phonenumberText.text.length > 0) {
+        
+        [SMSSDK  commitVerificationCode:self.verifynumberText.text
+                            phoneNumber:self.phonenumberText.text
+                                   zone:@"86"
+                                 result:^(NSError *error) {
+                                     if (!error) {
+                                         NSLog(@"验证成功");
+                                         [self setPasswordHidden:NO];
+                                         [self setVerifyHidden:YES];
+                                         
+                                     } else {
+                                         NSLog(@"验证失败");
+                                     }
+                                 }];
+    }
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)verifyCode:(id)sender {
     if (!isVerified && self.phonenumberText.text.length > 0) {
         [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS
@@ -69,24 +90,51 @@ bool isVerified = NO;
                                      }
                                  }];
     }
+
+}
+- (IBAction)nexEvent:(id)sender {
+    NSString *username = self.phonenumberText.text;
+    NSString *password = self.passwordText.text;
     
-    if (isVerified && self.verifynumberText.text.length >0) {
-   
-        [SMSSDK  commitVerificationCode:self.verifynumberText.text
-                            phoneNumber:self.phonenumberText.text
-                                   zone:@"86"
-                                 result:^(NSError *error) {
-                                     if (!error) {
-                                         NSLog(@"验证成功");
-                                     } else {
-                                         NSLog(@"验证失败");
-                                     }
-                                 }];
-    }
+    [self requestRegister:username withPassword:password];
 }
 
-
-
+- (void)requestRegister:(NSString *)name withPassword:(NSString *)password
+{
+    
+    //NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    //NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://127.0.0.1:3000/users/register"]];
+    request.HTTPMethod = @"POST";
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSDictionary *dictionary = @{@"username":name, @"password": password};
+    NSError *error = nil;
+    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
+    request.HTTPBody = bodyData;
+    
+    if (!error) {
+        
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                        if (!error) {
+                                                            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                                                            if (dict[@"error"]) {
+                                                                NSLog(@"dictionary error : %@", dict[@"error"]);
+                                                            } else {
+                                                                NSLog(@"%@", dict[@"username"]);
+                                                            }
+                                                        } else {
+                                                            NSLog(@"error : %@", error.description);
+                                                        }
+                                                    }];
+        [dataTask resume];
+    }
+    
+}
 
 
 /*
