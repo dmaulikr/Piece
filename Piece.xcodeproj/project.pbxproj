@@ -23,6 +23,7 @@
 		7D6E5A681BF2425900D3F7B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A671BF2425900D3F7B0 /* libz.tbd */; };
 		7D6E5A6A1BF2426400D3F7B0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A691BF2426400D3F7B0 /* MessageUI.framework */; };
 		7D8A88DA1BEF98F5003FEF54 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */; };
+		7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE50B061BF7895B004E494F /* SimpleHttp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		7D6E5A691BF2426400D3F7B0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7D8A88D81BEF98F5003FEF54 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		7DE50B061BF7895B004E494F /* SimpleHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleHttp.m; sourceTree = "<group>"; };
+		7DE50B081BF7896C004E494F /* SimpleHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHttp.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				7D47630D1BEA4B8D007CF6E6 /* Info.plist */,
 				7D4763051BEA4B8D007CF6E6 /* Piece.xcdatamodeld */,
 				7D4762F91BEA4B8D007CF6E6 /* Supporting Files */,
+				7DE50B061BF7895B004E494F /* SimpleHttp.m */,
+				7DE50B081BF7896C004E494F /* SimpleHttp.h */,
 			);
 			path = Piece;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				7D8A88DA1BEF98F5003FEF54 /* RegisterViewController.m in Sources */,
 				7D4763071BEA4B8D007CF6E6 /* Piece.xcdatamodeld in Sources */,
 				7D4763011BEA4B8D007CF6E6 /* ViewController.m in Sources */,
+				7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */,
 				7D4762FE1BEA4B8D007CF6E6 /* AppDelegate.m in Sources */,
 				7D4762FB1BEA4B8D007CF6E6 /* main.m in Sources */,
 			);

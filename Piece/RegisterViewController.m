@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "SimpleHttp.h"
 
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
@@ -96,45 +97,9 @@ bool isVerified = NO;
     NSString *username = self.phonenumberText.text;
     NSString *password = self.passwordText.text;
     
-    [self requestRegister:username withPassword:password];
+    [SimpleHttp requestRegister:username withPassword:password];
 }
 
-- (void)requestRegister:(NSString *)name withPassword:(NSString *)password
-{
-    
-    //NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    //NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://127.0.0.1:3000/users/register"]];
-    request.HTTPMethod = @"POST";
-    
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    NSDictionary *dictionary = @{@"username":name, @"password": password};
-    NSError *error = nil;
-    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
-    request.HTTPBody = bodyData;
-    
-    if (!error) {
-        
-        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                        if (!error) {
-                                                            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                                                            if (dict[@"error"]) {
-                                                                NSLog(@"dictionary error : %@", dict[@"error"]);
-                                                            } else {
-                                                                NSLog(@"%@", dict[@"username"]);
-                                                            }
-                                                        } else {
-                                                            NSLog(@"error : %@", error.description);
-                                                        }
-                                                    }];
-        [dataTask resume];
-    }
-    
-}
 
 
 /*

@@ -72,6 +72,7 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HAf-5l-GUl"/>
+                                    <segue destination="0FV-Zo-uYO" kind="show" identifier="noteReview" id="kza-ma-y1H"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aSQ-24-LiI">
@@ -182,6 +183,7 @@
                                 <state key="normal" title="next"/>
                                 <connections>
                                     <action selector="nexEvent:" destination="Zon-oE-BBR" eventType="touchUpInside" id="NBk-wF-VGZ"/>
+                                    <segue destination="veL-6s-cYP" kind="show" id="6f5-n7-YbD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j85-7l-T4u">
@@ -244,6 +246,31 @@
             </objects>
             <point key="canvasLocation" x="1773" y="354"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="qK7-3h-hrW">
+            <objects>
+                <viewController id="veL-6s-cYP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2RO-uh-rj1"/>
+                        <viewControllerLayoutGuide type="bottom" id="R13-Bk-yoE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lg6-wp-LZz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kyF-1z-CSj">
+                                <rect key="frame" x="180" y="103" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcb-J7-zY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2467" y="354"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7ig-rM-Vif">
             <objects>
@@ -262,6 +289,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrC-Kb-uwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1045" y="354"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8M8-YF-Tdl">
+            <objects>
+                <viewController storyboardIdentifier="noteReview" id="0FV-Zo-uYO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1dr-NM-Ibu"/>
+                        <viewControllerLayoutGuide type="bottom" id="e81-wE-6a5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9fV-pv-kTS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qJe-fO-pX8">
+                                <rect key="frame" x="180" y="101" width="240" height="398"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="42C-fR-8hc"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qJe-fO-pX8" firstAttribute="top" secondItem="1dr-NM-Ibu" secondAttribute="bottom" constant="81" id="04L-FW-OrY"/>
+                            <constraint firstItem="qJe-fO-pX8" firstAttribute="centerX" secondItem="9fV-pv-kTS" secondAttribute="centerX" id="52e-Xs-CGv"/>
+                            <constraint firstItem="qJe-fO-pX8" firstAttribute="centerY" secondItem="9fV-pv-kTS" secondAttribute="centerY" id="ti3-nf-1Ia"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lDr-ar-kRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="1115"/>
         </scene>
     </scenes>
 </document>
