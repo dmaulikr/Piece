@@ -23,6 +23,7 @@
 		7D6E5A681BF2425900D3F7B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A671BF2425900D3F7B0 /* libz.tbd */; };
 		7D6E5A6A1BF2426400D3F7B0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A691BF2426400D3F7B0 /* MessageUI.framework */; };
 		7D8A88DA1BEF98F5003FEF54 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */; };
+		7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */; };
 		7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE50B061BF7895B004E494F /* SimpleHttp.m */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		7D6E5A691BF2426400D3F7B0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7D8A88D81BEF98F5003FEF54 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		7DB8ADE51BF8BAB4009D4193 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		7DE50B061BF7895B004E494F /* SimpleHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleHttp.m; sourceTree = "<group>"; };
 		7DE50B081BF7896C004E494F /* SimpleHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHttp.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,21 +98,15 @@
 		7D4762F81BEA4B8D007CF6E6 /* Piece */ = {
 			isa = PBXGroup;
 			children = (
+				7DB8ADE91BF8BBFF009D4193 /* Utilities */,
 				7D6E5A581BF23E4B00D3F7B0 /* SMS_SDK */,
-				7D4762FC1BEA4B8D007CF6E6 /* AppDelegate.h */,
-				7D4762FD1BEA4B8D007CF6E6 /* AppDelegate.m */,
-				7D4762FF1BEA4B8D007CF6E6 /* ViewController.h */,
-				7D4763001BEA4B8D007CF6E6 /* ViewController.m */,
-				7D8A88D81BEF98F5003FEF54 /* RegisterViewController.h */,
-				7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */,
+				7DB8ADE81BF8BAE2009D4193 /* View */,
 				7D4763021BEA4B8D007CF6E6 /* Main.storyboard */,
 				7D4763081BEA4B8D007CF6E6 /* Assets.xcassets */,
 				7D47630A1BEA4B8D007CF6E6 /* LaunchScreen.storyboard */,
 				7D47630D1BEA4B8D007CF6E6 /* Info.plist */,
 				7D4763051BEA4B8D007CF6E6 /* Piece.xcdatamodeld */,
 				7D4762F91BEA4B8D007CF6E6 /* Supporting Files */,
-				7DE50B061BF7895B004E494F /* SimpleHttp.m */,
-				7DE50B081BF7896C004E494F /* SimpleHttp.h */,
 			);
 			path = Piece;
 			sourceTree = "<group>";
@@ -117,6 +114,8 @@
 		7D4762F91BEA4B8D007CF6E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D4762FC1BEA4B8D007CF6E6 /* AppDelegate.h */,
+				7D4762FD1BEA4B8D007CF6E6 /* AppDelegate.m */,
 				7D4762FA1BEA4B8D007CF6E6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -130,6 +129,28 @@
 				7D6E5A5C1BF23E4B00D3F7B0 /* SMS_SDK.framework */,
 			);
 			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		7DB8ADE81BF8BAE2009D4193 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D4762FF1BEA4B8D007CF6E6 /* ViewController.h */,
+				7D4763001BEA4B8D007CF6E6 /* ViewController.m */,
+				7D8A88D81BEF98F5003FEF54 /* RegisterViewController.h */,
+				7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */,
+				7DB8ADE51BF8BAB4009D4193 /* ProfileViewController.h */,
+				7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7DB8ADE91BF8BBFF009D4193 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7DE50B061BF7895B004E494F /* SimpleHttp.m */,
+				7DE50B081BF7896C004E494F /* SimpleHttp.h */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +229,7 @@
 				7D4763071BEA4B8D007CF6E6 /* Piece.xcdatamodeld in Sources */,
 				7D4763011BEA4B8D007CF6E6 /* ViewController.m in Sources */,
 				7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */,
+				7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */,
 				7D4762FE1BEA4B8D007CF6E6 /* AppDelegate.m in Sources */,
 				7D4762FB1BEA4B8D007CF6E6 /* main.m in Sources */,
 			);

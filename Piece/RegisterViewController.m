@@ -94,10 +94,15 @@ bool isVerified = NO;
 
 }
 - (IBAction)nexEvent:(id)sender {
+    /*
     NSString *username = self.phonenumberText.text;
     NSString *password = self.passwordText.text;
     
     [SimpleHttp requestRegister:username withPassword:password];
+    */
+    
+    // For test
+    [self performSegueWithIdentifier:@"profileView" sender:self];
 }
 
 
