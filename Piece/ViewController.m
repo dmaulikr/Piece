@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SimpleHttp.h"
+#import "User.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -17,6 +18,8 @@
 
 @implementation ViewController
 
+extern NSString *userId;
+
 - (IBAction)unwindToHome:(UIStoryboardSegue *)segue
 {
     
@@ -24,6 +27,7 @@
 
 - (IBAction)login:(id)sender
 {
+
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
     
@@ -36,7 +40,8 @@
                 NSLog(@"dictionary error : %@", dict[@"error"]);
             } else {
                 NSLog(@"%@", dict[@"username"]);
-                
+                userId = dict[@"user_id"];
+                NSLog(@"user id: %@", userId);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self performSegueWithIdentifier:@"noteReview" sender:self];
                 });

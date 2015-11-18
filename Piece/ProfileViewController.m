@@ -7,6 +7,8 @@
 //
 
 #import "ProfileViewController.h"
+#import "ANRImageStore.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ProfileViewController() <UINavigationBarDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -15,6 +17,15 @@
 
 
 @implementation ProfileViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.imageView.layer.cornerRadius = self.imageView.frame.size.height < self.imageView.frame.size.width?self.imageView.frame.size.height/2:self.imageView.frame.size.width/2;
+    self.imageView.clipsToBounds = YES;
+    //self.imageView.layer.masksToBounds = YES;
+
+}
 
 - (IBAction)camera:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -34,6 +45,9 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
     self.imageView.image = image;
+
+    ANRImageStore *imageStore = ANRImageStore.sharedStore;
+    [imageStore setImage:image forKey:@"avatar"];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
