@@ -9,6 +9,8 @@
 #import "ProfileViewController.h"
 #import "ANRImageStore.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SimpleHttp.h"
+#import "User.h"
 
 @interface ProfileViewController() <UINavigationBarDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -17,6 +19,8 @@
 
 
 @implementation ProfileViewController
+
+extern NSString *userId;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,6 +52,8 @@
 
     ANRImageStore *imageStore = ANRImageStore.sharedStore;
     [imageStore setImage:image forKey:@"avatar"];
+    
+    [SimpleHttp uploadAvatar:userId avatar:image];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

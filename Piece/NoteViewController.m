@@ -8,6 +8,8 @@
 
 #import "NoteViewController.h"
 #import "ANRImageStore.h"
+#import "SimpleHttp.h"
+#import "User.h"
 
 @interface NoteViewController()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -16,12 +18,18 @@
 
 @implementation NoteViewController
 
+extern NSString *userId;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    /* For Test
     ANRImageStore *imageStore = ANRImageStore.sharedStore;
     UIImage *storedImage = [imageStore imageForKey:@"avatar"];
     self.imageView.image = storedImage;
+    */
+    
+    [SimpleHttp downloadAvatar:userId];
 }
 
 @end

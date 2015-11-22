@@ -9,10 +9,14 @@
 #ifndef SimpleHttp_h
 #define SimpleHttp_h
 
+#import <UIKit/UIKit.h>
+
 @interface SimpleHttp : NSObject
 
 + (void)requestLogin:(NSString *)name withPassword:(NSString *)password responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
 + (void)requestRegister:(NSString *)name withPassword:(NSString *)password;
++ (void)uploadAvatar: (NSString *)userId avatar:(UIImage *)image;
++ (void)downloadAvatar: (NSString *)userId;
 
 @end
 
