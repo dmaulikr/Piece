@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SimpleHttp.h"
 #import <UIKit/UIKit.h>
+#import "ANRImageStore.h"
 
 @implementation SimpleHttp
 
@@ -82,7 +83,7 @@
     
     NSURLSession *session = [NSURLSession sharedSession];
 
-    NSString *avatarURL = [NSString stringWithFormat:@"http://127.0.0.1:3000/profile/upload?userId=%@",userId];
+    NSString *avatarURL = [NSString stringWithFormat:@"http://127.0.0.1:3000/profile/upload/%@",userId];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
     request.HTTPMethod = @"POST";
     
@@ -145,12 +146,9 @@
         NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                         if (!error) {
-                                                            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                                                            if (dict[@"error"]) {
-                                                                NSLog(@"dictionary error : %@", dict[@"error"]);
-                                                            } else {
-                                                                NSLog(@"%@", dict);
-                                                            }
+                                                            UIImage *downloadImage = [UIImage imageWithData:data];
+                                                            ANRImageStore *imageStore = ANRImageStore.sharedStore;
+                                                            [imageStore setImage: image forKey:@"avatar"];
                                                         } else {
                                                             NSLog(@"error : %@", error.description);
                                                         }
