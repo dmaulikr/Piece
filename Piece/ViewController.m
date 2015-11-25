@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "SimpleHttp.h"
-#import "User.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -43,7 +42,7 @@ extern NSString *userId;
                 userId = dict[@"user_id"];
                 NSLog(@"user id: %@", userId);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self performSegueWithIdentifier:@"noteReview" sender:self];
+                    [self performSegueWithIdentifier:@"testView" sender:self];
                 });
                 
             }

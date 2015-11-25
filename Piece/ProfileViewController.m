@@ -35,7 +35,8 @@ extern NSString *userId;
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        //imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     } else {
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
@@ -53,7 +54,7 @@ extern NSString *userId;
     ANRImageStore *imageStore = ANRImageStore.sharedStore;
     [imageStore setImage:image forKey:@"avatar"];
     
-    [SimpleHttp uploadAvatar:userId avatar:image];
+    [SimpleHttp uploadAvatar2:userId avatar:image];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

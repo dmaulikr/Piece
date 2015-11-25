@@ -16,7 +16,8 @@
 + (void)requestLogin:(NSString *)name withPassword:(NSString *)password responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
 + (void)requestRegister:(NSString *)name withPassword:(NSString *)password;
 + (void)uploadAvatar: (NSString *)userId avatar:(UIImage *)image;
-+ (void)downloadAvatar: (NSString *)userId;
++ (void)downloadAvatar: (NSString *)userId responseBlock:(void(^)(NSURL *data, NSURLResponse *response, NSError *error))block;
++ (void)uploadAvatar2: (NSString *)userId avatar:(UIImage *)image;
 
 @end
 

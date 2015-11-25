@@ -108,6 +108,7 @@
                         <outlet property="passwordTextField" destination="aSQ-24-LiI" id="Xcc-6Y-R0h"/>
                         <outlet property="usernameTextField" destination="VAq-Vt-DvS" id="2Xj-xu-WS1"/>
                         <segue destination="0FV-Zo-uYO" kind="show" identifier="noteReview" id="jrT-58-0D8"/>
+                        <segue destination="veL-6s-cYP" kind="show" identifier="testView" id="ziF-gv-HOe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -370,4 +371,7 @@
             <point key="canvasLocation" x="305" y="1115"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ziF-gv-HOe"/>
+    </inferredMetricsTieBreakers>
 </document>
