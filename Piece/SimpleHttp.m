@@ -19,7 +19,7 @@
     //NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.1.108:3000/users/login"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://127.0.0.1:3000/users/login"]];
     request.HTTPMethod = @"POST";
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -45,7 +45,7 @@
     //NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.1.108:3000/users/register"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://127.0.0.1:3000/users/register"]];
     request.HTTPMethod = @"POST";
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -81,7 +81,7 @@
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
 
-    NSString *avatarURL = [NSString stringWithFormat:@"http://192.168.1.108:3000/profile/upload/%@",userId];
+    NSString *avatarURL = [NSString stringWithFormat:@"http://127.0.0.1:3000/profile/upload/%@",userId];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
     request.HTTPMethod = @"POST";
     
@@ -126,7 +126,7 @@
     // Use a session with a custom configuration
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
-    NSString *avatarURL = [NSString stringWithFormat:@"http://192.168.1.108:3000/profile/avatar"];
+    NSString *avatarURL = [NSString stringWithFormat:@"http://127.0.0.1:3000/profile/avatar"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
     request.HTTPMethod = @"POST";
     
@@ -184,7 +184,7 @@
     //将body字符串转化为UTF8格式的二进制
     NSData *postData = [body dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSString *avatarURL = [NSString stringWithFormat:@"http://192.168.1.108:3000/profile/upload/%@",userId];
+    NSString *avatarURL = [NSString stringWithFormat:@"http://127.0.0.1:3000/profile/upload/%@",userId];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:avatarURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
