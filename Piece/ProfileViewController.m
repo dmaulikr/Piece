@@ -14,6 +14,10 @@
 
 @interface ProfileViewController() <UINavigationBarDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *birthDayTextView;
+@property (weak, nonatomic) IBOutlet UITextField *birthPlaceTextView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePickerView;
+
 @end
 
 
@@ -27,7 +31,31 @@ extern NSString *userId;
     self.imageView.layer.cornerRadius = self.imageView.frame.size.height < self.imageView.frame.size.width?self.imageView.frame.size.height/2:self.imageView.frame.size.width/2;
     self.imageView.clipsToBounds = YES;
     //self.imageView.layer.masksToBounds = YES;
+    
 
+    _datePickerView.hidden = true;
+    
+    //Needed for textFieldShouldBeginEditing
+    [_birthDayTextView setDelegate:self];
+
+}
+- (IBAction)textFieldClicked:(id)sender {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd-yy hh:mm a"];
+    _birthDayTextView.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate: _datePickerView.date]];
+    _datePickerView.hidden = false;
+}
+
+- (IBAction)datePickerChanged:(id)sender {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd-yy hh:mm a"];
+    _birthDayTextView.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate: _datePickerView.date]];
+}
+
+
+//Needed to prevent keyboard from opening
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return NO;
 }
 
 - (IBAction)camera:(id)sender {
