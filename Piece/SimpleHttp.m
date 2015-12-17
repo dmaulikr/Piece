@@ -206,4 +206,37 @@
     [dataTask resume];
 }
 
++ (void)updateProfile: (NSString *)userId withGender:(NSString *)gender withBirthDay:(NSString *)birthDay withBirthPlace:(NSString *)birthPlace
+{
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://127.0.0.1:3000/profile/update"]];
+    request.HTTPMethod = @"POST";
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSDictionary *dictionary = @{@"userId":userId, @"gender":gender, @"birth_day": birthDay, @"birth_place": birthPlace};
+    NSError *error = nil;
+    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
+    request.HTTPBody = bodyData;
+    
+    if (!error) {
+        
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                        if (!error) {
+                                                            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                                                            if (dict[@"error"]) {
+                                                                NSLog(@"dictionary error : %@", dict[@"error"]);
+                                                            } else {
+                                                                NSLog(@"%@", dict[@"username"]);
+                                                            }
+                                                        } else {
+                                                            NSLog(@"error : %@", error.description);
+                                                        }
+                                                    }];
+        [dataTask resume];
+    }
+}
+
 @end

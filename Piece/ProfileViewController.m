@@ -12,12 +12,20 @@
 #import "SimpleHttp.h"
 #import "User.h"
 
-@interface ProfileViewController() <UINavigationBarDelegate, UIImagePickerControllerDelegate>
+@interface ProfileViewController() <UINavigationBarDelegate, UIImagePickerControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@property (weak, nonatomic) IBOutlet UISegmentedControl *genderSwitcher;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *birthDayTextView;
 @property (weak, nonatomic) IBOutlet UITextField *birthPlaceTextView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePickerView;
+@property (weak, nonatomic) IBOutlet UIToolbar *doneToolbar;
+@property (weak, nonatomic) IBOutlet UIPickerView *placePickerView;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *okToolbar;
+@property (weak, nonatomic) NSString *genderValue;
+
+@property (nonatomic, strong) NSArray *areaList;
+@property (nonatomic, strong) NSString *currentPlace;
 @end
 
 
@@ -32,30 +40,111 @@ extern NSString *userId;
     self.imageView.clipsToBounds = YES;
     //self.imageView.layer.masksToBounds = YES;
     
-
+    [self.genderSwitcher addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
     _datePickerView.hidden = true;
+    _doneToolbar.hidden = true;
     
+    [self.placePickerView init];
+    _placePickerView.hidden = true;
+    _okToolbar.hidden = true;
     //Needed for textFieldShouldBeginEditing
     [_birthDayTextView setDelegate:self];
+    _placePickerView.dataSource = self;
+    _placePickerView.delegate = self;
+    
+    self.areaList = @[@[@"1", @"东台"],
+                      @[@"2", @"盐城"],
+                      @[@"3", @"南京"],
+                      @[@"4", @"成都"],
+                      @[@"5", @"厦门"],
+                      @[@"6", @"上海"],
+                      @[@"7", @"北京"]];
+    [_birthPlaceTextView setDelegate:self];
 
 }
+     
+- (void)segmentAction:(UISegmentedControl *)Seg
+{
+    
+    NSInteger index = Seg.selectedSegmentIndex;
+    
+    switch (index) {
+        case 0:
+            NSLog(@"male clicked.");
+            _genderValue = @"male";
+            break;
+        case 1:
+            NSLog(@"female clicked.");
+            _genderValue = @"female";
+            break;
+        default:
+            break;
+    }
+}
+     
 - (IBAction)textFieldClicked:(id)sender {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM-dd-yy hh:mm a"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     _birthDayTextView.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate: _datePickerView.date]];
     _datePickerView.hidden = false;
+    _doneToolbar.hidden = false;
 }
 
 - (IBAction)datePickerChanged:(id)sender {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM-dd-yy hh:mm a"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     _birthDayTextView.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate: _datePickerView.date]];
 }
 
+- (IBAction)closeDatePicker:(id)sender {
+    _datePickerView.hidden = true;
+    _doneToolbar.hidden = true;
+}
+
+- (IBAction)textPlaceFieldClicked:(id)sender {
+    _birthPlaceTextView.text = [NSString stringWithFormat:@"%@", self.areaList[0][1]];
+    _placePickerView.hidden = false;
+    _okToolbar.hidden = false;
+}
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+    
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return self.areaList.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return self.areaList[row][1];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    NSLog(@"Place Picker View: %ld/%@", row, self.areaList[row][1]);
+    self.currentPlace = self.areaList[row][1];
+     _birthPlaceTextView.text = [NSString stringWithFormat:@"%@", self.currentPlace];
+    
+}
+
+
+- (IBAction)closePlacePicker:(id)sender {
+    _placePickerView.hidden = true;
+    _okToolbar.hidden = true;
+}
 
 //Needed to prevent keyboard from opening
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     return NO;
+}
+
+- (IBAction)updateProfile:(id)sender {
+    NSLog(@"update profile:%@: %@: %@",_genderValue, _birthDayTextView.text, _birthPlaceTextView.text);
+    [SimpleHttp updateProfile:userId withGender:_genderValue withBirthDay:_birthDayTextView.text withBirthPlace:_birthPlaceTextView.text];
 }
 
 - (IBAction)camera:(id)sender {

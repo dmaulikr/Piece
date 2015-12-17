@@ -320,9 +320,22 @@
                                 <rect key="frame" x="259" y="515" width="128" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textPlaceFieldClicked:" destination="veL-6s-cYP" eventType="touchDown" id="Pbb-f8-Yr3"/>
+                                </connections>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4H9-Gc-wdG">
-                                <rect key="frame" x="0.0" y="391" width="600" height="216"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6I-vS-13a">
+                                <rect key="frame" x="259" y="553" width="128" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="update"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateProfile:" destination="veL-6s-cYP" eventType="touchUpInside" id="OSg-Ke-Kba"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4H9-Gc-wdG">
+                                <rect key="frame" x="8" y="303" width="600" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="471451445.45042002">
                                     <!--2015-12-10 14:44:05 +0000-->
                                 </date>
@@ -330,14 +343,58 @@
                                     <action selector="datePickerChanged:" destination="veL-6s-cYP" eventType="valueChanged" id="9kX-3L-Vte"/>
                                 </connections>
                             </datePicker>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-NU-4SH">
+                                <rect key="frame" x="0.0" y="347" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="fixedSpace" id="YCR-z6-pvQ"/>
+                                    <barButtonItem title="Done" id="3j0-mc-QkX">
+                                        <connections>
+                                            <action selector="closeDatePicker:" destination="veL-6s-cYP" id="AzG-dn-NIk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W6-fA-PR6">
+                                <rect key="frame" x="0.0" y="303" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="OK" id="mx5-uM-7gr">
+                                        <connections>
+                                            <action selector="closePlacePicker:" destination="veL-6s-cYP" id="7n1-my-G2Y"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DeD-N0-M9k">
+                                <rect key="frame" x="0.0" y="347" width="600" height="253"/>
+                                <connections>
+                                    <outlet property="delegate" destination="veL-6s-cYP" id="P1Q-SB-D28"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4H9-Gc-wdG" firstAttribute="trailing" secondItem="KsH-NU-4SH" secondAttribute="trailing" id="6S1-YX-GTy"/>
+                            <constraint firstItem="KsH-NU-4SH" firstAttribute="centerX" secondItem="lg6-wp-LZz" secondAttribute="centerX" id="8yJ-PD-ihr"/>
+                            <constraint firstItem="4H9-Gc-wdG" firstAttribute="centerX" secondItem="lg6-wp-LZz" secondAttribute="centerX" id="Fnl-zq-2Rd"/>
+                            <constraint firstItem="4H9-Gc-wdG" firstAttribute="top" secondItem="KsH-NU-4SH" secondAttribute="bottom" id="MK5-84-yZE"/>
                             <constraint firstItem="kyF-1z-CSj" firstAttribute="centerY" secondItem="lg6-wp-LZz" secondAttribute="centerY" id="MT3-le-jRL"/>
+                            <constraint firstItem="DeD-N0-M9k" firstAttribute="trailing" secondItem="8W6-fA-PR6" secondAttribute="trailing" id="PAD-W1-TFq"/>
                             <constraint firstItem="ccu-9a-JCT" firstAttribute="centerX" secondItem="lg6-wp-LZz" secondAttribute="centerX" id="Sv7-hl-zHo"/>
+                            <constraint firstItem="KsH-NU-4SH" firstAttribute="leading" secondItem="lg6-wp-LZz" secondAttribute="leading" id="TGA-Ce-5KS"/>
+                            <constraint firstItem="DeD-N0-M9k" firstAttribute="width" secondItem="8W6-fA-PR6" secondAttribute="width" id="bAQ-Ut-9Yo"/>
+                            <constraint firstItem="4H9-Gc-wdG" firstAttribute="leading" secondItem="KsH-NU-4SH" secondAttribute="leading" id="bGj-tt-yRk"/>
                             <constraint firstItem="ccu-9a-JCT" firstAttribute="centerY" secondItem="lg6-wp-LZz" secondAttribute="centerY" id="d8C-l9-C8n"/>
+                            <constraint firstItem="DeD-N0-M9k" firstAttribute="centerX" secondItem="lg6-wp-LZz" secondAttribute="centerX" id="eFh-qU-9ex"/>
                             <constraint firstItem="kyF-1z-CSj" firstAttribute="centerX" secondItem="lg6-wp-LZz" secondAttribute="centerX" id="eck-Cl-2Pp"/>
                             <constraint firstItem="kyF-1z-CSj" firstAttribute="centerX" secondItem="lg6-wp-LZz" secondAttribute="centerX" id="gzr-Jj-UH4"/>
+                            <constraint firstItem="KsH-NU-4SH" firstAttribute="top" secondItem="ccu-9a-JCT" secondAttribute="bottom" constant="32" id="kSP-MI-Ldf"/>
+                            <constraint firstItem="DeD-N0-M9k" firstAttribute="bottom" secondItem="R13-Bk-yoE" secondAttribute="top" id="l7Q-Jj-uNG"/>
+                            <constraint firstItem="4H9-Gc-wdG" firstAttribute="width" secondItem="KsH-NU-4SH" secondAttribute="width" id="lvD-v4-bJf"/>
+                            <constraint firstItem="8W6-fA-PR6" firstAttribute="centerX" secondItem="lg6-wp-LZz" secondAttribute="centerX" id="lyK-w4-brQ"/>
+                            <constraint firstItem="8W6-fA-PR6" firstAttribute="leading" secondItem="KsH-NU-4SH" secondAttribute="leading" id="oL3-Md-7N4"/>
+                            <constraint firstItem="DeD-N0-M9k" firstAttribute="top" secondItem="8W6-fA-PR6" secondAttribute="bottom" id="p2D-i0-9yS"/>
+                            <constraint firstItem="DeD-N0-M9k" firstAttribute="leading" secondItem="8W6-fA-PR6" secondAttribute="leading" id="pdq-u4-Ui8"/>
+                            <constraint firstItem="DeD-N0-M9k" firstAttribute="top" secondItem="KsH-NU-4SH" secondAttribute="top" id="ufb-DZ-L0z"/>
                             <constraint firstItem="kyF-1z-CSj" firstAttribute="centerY" secondItem="lg6-wp-LZz" secondAttribute="centerY" id="vh1-eZ-8a6"/>
                         </constraints>
                     </view>
@@ -345,7 +402,11 @@
                         <outlet property="birthDayTextView" destination="mXV-92-l7f" id="Z3r-Wj-cFG"/>
                         <outlet property="birthPlaceTextView" destination="buJ-Im-r8t" id="06I-UC-PTd"/>
                         <outlet property="datePickerView" destination="4H9-Gc-wdG" id="5oL-7o-0Ni"/>
+                        <outlet property="doneToolbar" destination="KsH-NU-4SH" id="GTZ-Ax-uP6"/>
+                        <outlet property="genderSwitcher" destination="g6Q-Cd-xml" id="eFk-Vm-AQp"/>
                         <outlet property="imageView" destination="kyF-1z-CSj" id="pbC-vG-edU"/>
+                        <outlet property="okToolbar" destination="8W6-fA-PR6" id="irm-FR-Ogv"/>
+                        <outlet property="placePickerView" destination="DeD-N0-M9k" id="oG4-Vy-eoh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcb-J7-zY0" userLabel="First Responder" sceneMemberID="firstResponder"/>

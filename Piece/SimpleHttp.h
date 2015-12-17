@@ -18,7 +18,7 @@
 + (void)uploadAvatar: (NSString *)userId avatar:(UIImage *)image;
 + (void)downloadAvatar: (NSString *)userId responseBlock:(void(^)(NSURL *data, NSURLResponse *response, NSError *error))block;
 + (void)uploadAvatar2: (NSString *)userId avatar:(UIImage *)image;
-
++ (void)updateProfile: (NSString *)userId withGender:(NSString *)gender withBirthDay:(NSString *)birthDay withBirthPlace:(NSString *)birthPlace;
 @end
 
 #endif /* SimpleHttp_h */
