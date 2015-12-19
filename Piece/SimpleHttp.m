@@ -239,4 +239,62 @@
     }
 }
 
++ (void)getNote: (NSString *)userId responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    // Use a session with a custom configuration
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    NSString *avatarURL = [NSString stringWithFormat:@"http://127.0.0.1:3000/note/note"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
+    request.HTTPMethod = @"POST";
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSDictionary *dictionary = @{@"userId":userId};
+    NSError *error = nil;
+    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
+    request.HTTPBody = bodyData;
+    
+    if (!error) {
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                    completionHandler:block];
+        [dataTask resume];
+    }
+    
+}
++ (void)createNote: (NSString *)userId withNote:(NSString *)note
+{
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://127.0.0.1:3000/note"]];
+    request.HTTPMethod = @"POST";
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSDictionary *dictionary = @{@"userId":userId, @"note":note};
+    NSError *error = nil;
+    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
+    request.HTTPBody = bodyData;
+    
+    if (!error) {
+        
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                        if (!error) {
+                                                            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                                                            if (dict[@"error"]) {
+                                                                NSLog(@"dictionary error : %@", dict[@"error"]);
+                                                            } else {
+                                                                NSLog(@"%@", dict[@"username"]);
+                                                            }
+                                                        } else {
+                                                            NSLog(@"error : %@", error.description);
+                                                        }
+                                                    }];
+        [dataTask resume];
+    }
+    
+}
+
 @end

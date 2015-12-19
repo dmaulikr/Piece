@@ -12,6 +12,9 @@
 
 @interface NoteViewController()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextView *radomTextView;
+@property (weak, nonatomic) IBOutlet UITextField *leaveMessageView;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
@@ -19,10 +22,13 @@
 
 extern NSString *userId;
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
+    _nextButton.hidden = true;
     [self loadImage];
+    [self loadNoteText];
 
 }
 
@@ -41,7 +47,8 @@ extern NSString *userId;
     return url;
 }
 
-- (void)loadImage {
+- (void)loadImage
+{
 
     /* For Test
      ANRImageStore *imageStore = ANRImageStore.sharedStore;
@@ -79,6 +86,36 @@ extern NSString *userId;
             NSLog(@"error : %@", error);
         }
         
+    }];
+}
+- (IBAction)leaveMessageChanged:(id)sender {
+    _nextButton.hidden = false;
+    
+}
+- (IBAction)nextPage:(id)sender {
+    if (_leaveMessageView.text.length > 0) {
+        [SimpleHttp createNote:userId withNote:_leaveMessageView.text];
+    } else {
+        NSLog(@"content has nothing");
+    }
+}
+
+- (void)loadNoteText
+{
+    [SimpleHttp getNote:userId responseBlock:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            if ([dict[@"error"] isEqual:[NSNull null]]) {
+                NSLog(@"content is %@", dict[@"content"]);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.radomTextView.text = dict[@"content"];
+                });
+            } else {
+                NSLog(@"dictionary error : %@", dict[@"error"]);
+            }
+        } else {
+            NSLog(@"error : %@", error);
+        }
     }];
 }
 
