@@ -14,6 +14,7 @@
 		7D4763071BEA4B8D007CF6E6 /* Piece.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D4763051BEA4B8D007CF6E6 /* Piece.xcdatamodeld */; };
 		7D4763091BEA4B8D007CF6E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4763081BEA4B8D007CF6E6 /* Assets.xcassets */; };
 		7D47630C1BEA4B8D007CF6E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D47630A1BEA4B8D007CF6E6 /* LaunchScreen.storyboard */; };
+		7D4A510F1C2837A800527350 /* MessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4A510E1C2837A800527350 /* MessageTableViewController.m */; };
 		7D526C141BFCB837005D4D1F /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D526C131BFCB837005D4D1F /* NoteViewController.m */; };
 		7D6E5A5E1BF23E4B00D3F7B0 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D6E5A591BF23E4B00D3F7B0 /* SMS_SDKLocalizable.strings */; };
 		7D6E5A5F1BF23E4B00D3F7B0 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A5B1BF23E4B00D3F7B0 /* MOBFoundation.framework */; };
@@ -41,6 +42,8 @@
 		7D4763081BEA4B8D007CF6E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D47630B1BEA4B8D007CF6E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D47630D1BEA4B8D007CF6E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D4A510D1C2837A800527350 /* MessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewController.h; sourceTree = "<group>"; };
+		7D4A510E1C2837A800527350 /* MessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewController.m; sourceTree = "<group>"; };
 		7D526C121BFCB837005D4D1F /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		7D526C131BFCB837005D4D1F /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		7D6E5A5A1BF23E4B00D3F7B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 		7DB8ADE81BF8BAE2009D4193 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7D4A510D1C2837A800527350 /* MessageTableViewController.h */,
+				7D4A510E1C2837A800527350 /* MessageTableViewController.m */,
 				7D526C121BFCB837005D4D1F /* NoteViewController.h */,
 				7D526C131BFCB837005D4D1F /* NoteViewController.m */,
 				7D4762FF1BEA4B8D007CF6E6 /* ViewController.h */,
@@ -238,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D8A88DA1BEF98F5003FEF54 /* RegisterViewController.m in Sources */,
+				7D4A510F1C2837A800527350 /* MessageTableViewController.m in Sources */,
 				7D4763071BEA4B8D007CF6E6 /* Piece.xcdatamodeld in Sources */,
 				7D4763011BEA4B8D007CF6E6 /* ViewController.m in Sources */,
 				7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */,
