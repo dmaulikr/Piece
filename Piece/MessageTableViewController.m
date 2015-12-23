@@ -7,9 +7,12 @@
 //
 
 #import "MessageTableViewController.h"
+#import "ANRImageStore.h"
+#import "DetailMessageViewController.h"
 
 @implementation MessageTableViewController
 @synthesize booksArray;
+NSString *transformMessage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,7 +33,30 @@
     }
     
     // Configure the cell.
+    ANRImageStore *imageStore = ANRImageStore.sharedStore;
+    UIImage *storedImage = [imageStore imageForKey:@"avatar"];
+    cell.imageView.image = storedImage;
+    
     cell.textLabel.text = [self.booksArray objectAtIndex:indexPath.row];
     return cell;
+}
+
+#pragma mark Table Delegate Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger row = [indexPath row];
+    transformMessage = [[NSString alloc]initWithFormat:@"From %@!",[self.booksArray objectAtIndex:row]];
+    
+    [self performSegueWithIdentifier:@"detailMessage" sender:nil];
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier  isEqual: @"detailMessage"]) {
+        DetailMessageViewController *detailView = (DetailMessageViewController *)segue.destinationViewController;
+        [detailView setMessageText:transformMessage];
+    }
+    
 }
 @end
