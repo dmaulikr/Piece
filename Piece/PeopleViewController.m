@@ -6,8 +6,8 @@
 //  Copyright © 2015年 金小平. All rights reserved.
 //
 
-#import "PeopleTableViewController.h"
+#import "PeopleViewController.h"
 
-@implementation PeopleTableViewController
+@implementation PeopleViewController
 
 @end

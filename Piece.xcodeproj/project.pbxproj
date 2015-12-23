@@ -24,7 +24,7 @@
 		7D6E5A661BF2424E00D3F7B0 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A651BF2424E00D3F7B0 /* libicucore.tbd */; };
 		7D6E5A681BF2425900D3F7B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A671BF2425900D3F7B0 /* libz.tbd */; };
 		7D6E5A6A1BF2426400D3F7B0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A691BF2426400D3F7B0 /* MessageUI.framework */; };
-		7D6F5E5C1C2AD598006E1EE6 /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F5E5B1C2AD598006E1EE6 /* PeopleTableViewController.m */; };
+		7D6F5E5C1C2AD598006E1EE6 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F5E5B1C2AD598006E1EE6 /* PeopleViewController.m */; };
 		7D6F5E5F1C2AE909006E1EE6 /* DetailMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F5E5E1C2AE909006E1EE6 /* DetailMessageViewController.m */; };
 		7D8A88DA1BEF98F5003FEF54 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */; };
 		7D917F3F1BFA13A800F332C2 /* ANRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D917F3E1BFA13A800F332C2 /* ANRImageStore.m */; };
@@ -57,8 +57,8 @@
 		7D6E5A651BF2424E00D3F7B0 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		7D6E5A671BF2425900D3F7B0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7D6E5A691BF2426400D3F7B0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		7D6F5E5A1C2AD598006E1EE6 /* PeopleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleTableViewController.h; sourceTree = "<group>"; };
-		7D6F5E5B1C2AD598006E1EE6 /* PeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleTableViewController.m; sourceTree = "<group>"; };
+		7D6F5E5A1C2AD598006E1EE6 /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
+		7D6F5E5B1C2AD598006E1EE6 /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
 		7D6F5E5D1C2AE909006E1EE6 /* DetailMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMessageViewController.h; sourceTree = "<group>"; };
 		7D6F5E5E1C2AE909006E1EE6 /* DetailMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMessageViewController.m; sourceTree = "<group>"; };
 		7D8A88D81BEF98F5003FEF54 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 			children = (
 				7D6F5E5D1C2AE909006E1EE6 /* DetailMessageViewController.h */,
 				7D6F5E5E1C2AE909006E1EE6 /* DetailMessageViewController.m */,
-				7D6F5E5A1C2AD598006E1EE6 /* PeopleTableViewController.h */,
-				7D6F5E5B1C2AD598006E1EE6 /* PeopleTableViewController.m */,
+				7D6F5E5A1C2AD598006E1EE6 /* PeopleViewController.h */,
+				7D6F5E5B1C2AD598006E1EE6 /* PeopleViewController.m */,
 				7D4A510D1C2837A800527350 /* MessageTableViewController.h */,
 				7D4A510E1C2837A800527350 /* MessageTableViewController.m */,
 				7D526C121BFCB837005D4D1F /* NoteViewController.h */,
@@ -257,7 +257,7 @@
 				7D4763071BEA4B8D007CF6E6 /* Piece.xcdatamodeld in Sources */,
 				7D6F5E5F1C2AE909006E1EE6 /* DetailMessageViewController.m in Sources */,
 				7D4763011BEA4B8D007CF6E6 /* ViewController.m in Sources */,
-				7D6F5E5C1C2AD598006E1EE6 /* PeopleTableViewController.m in Sources */,
+				7D6F5E5C1C2AD598006E1EE6 /* PeopleViewController.m in Sources */,
 				7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */,
 				7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */,
 				7D4762FE1BEA4B8D007CF6E6 /* AppDelegate.m in Sources */,

@@ -555,35 +555,6 @@
             </objects>
             <point key="canvasLocation" x="3393" y="1117"/>
         </scene>
-        <!--People-->
-        <scene sceneID="r23-B5-biX">
-            <objects>
-                <tableViewController id="Hax-2B-Y1C" customClass="PeopleTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AoX-2b-RyQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F8k-55-ifH">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8k-55-ifH" id="cc0-BS-Zge">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Hax-2B-Y1C" id="3SP-SX-aKJ"/>
-                            <outlet property="delegate" destination="Hax-2B-Y1C" id="v4t-ft-hNX"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="People" id="L6n-GE-VHy"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2hD-MZ-HZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2671" y="1884"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4NM-Wf-d8G">
             <objects>
@@ -633,12 +604,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Hax-2B-Y1C" kind="relationship" relationship="rootViewController" id="V7I-oc-avg"/>
+                        <segue destination="vs0-ua-5HX" kind="relationship" relationship="rootViewController" id="37S-bt-yfi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Uk-g0-MWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1859" y="1884"/>
+        </scene>
+        <!--People-->
+        <scene sceneID="LVl-bP-kKU">
+            <objects>
+                <viewController id="vs0-ua-5HX" customClass="PeopleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9p2-rB-Ctv"/>
+                        <viewControllerLayoutGuide type="bottom" id="arW-gX-X6f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RY5-3p-dIC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tk0-J3-6N0">
+                                <rect key="frame" x="20" y="281" width="501" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LUB-4E-w91">
+                                <rect key="frame" x="20" y="105" width="501" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="People" id="H3j-3U-Bbg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRG-Yn-8Vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2591" y="1884"/>
         </scene>
     </scenes>
 </document>

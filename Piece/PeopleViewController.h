@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PeopleTableViewController : UITableViewController
+@interface PeopleViewController : UIViewController
 
 @end
