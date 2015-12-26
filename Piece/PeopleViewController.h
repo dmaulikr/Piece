@@ -1,5 +1,5 @@
 //
-//  PeopleTableViewController.h
+//  PeopleViewController.h
 //  Piece
 //
 //  Created by 金小平 on 15/12/23.
