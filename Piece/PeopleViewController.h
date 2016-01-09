@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PeopleViewController : UIViewController
+@interface PeopleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UIView *friendCreate;
+@property (weak, nonatomic) IBOutlet UITableView *friendTable;
 
 @end
