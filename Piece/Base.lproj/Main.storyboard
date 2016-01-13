@@ -537,7 +537,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNj-qO-lsW">
                                 <rect key="frame" x="279" y="289.5" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -554,6 +554,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9j-M8-stX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3393" y="1117"/>
+        </scene>
+        <!--Add Friend View Controller-->
+        <scene sceneID="qHg-92-eOv">
+            <objects>
+                <viewController id="oR3-7O-l30" customClass="AddFriendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kBx-SN-cyJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="mt9-pY-Y4X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2rd-lI-5Pt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyd-yp-gi3">
+                                <rect key="frame" x="36" y="147" width="150" height="91"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="91" id="3zG-WV-SKO"/>
+                                    <constraint firstAttribute="height" constant="91" id="AXV-n8-GDq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="UZJ-93-Acg"/>
+                                    <constraint firstAttribute="width" constant="150" id="hXV-1H-j1j"/>
+                                </constraints>
+                                <state key="normal" title="添加手机联系人"/>
+                                <connections>
+                                    <segue destination="UVo-wR-esH" kind="show" id="G8q-6X-1q0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新的朋友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-s2-v1U">
+                                <rect key="frame" x="36" y="267" width="68" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="LvG-W5-vEP"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="VNw-P4-d5j"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="eO8-T7-OWA"/>
+                                    <constraint firstAttribute="height" constant="21" id="pKP-OK-apd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yL9-4m-V9q">
+                                <rect key="frame" x="36" y="72" width="528" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="roj-Vt-lxq"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oR3-7O-l30" id="5AE-di-PdX"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="yL9-4m-V9q" secondAttribute="trailing" constant="16" id="7bV-wT-KHN"/>
+                            <constraint firstItem="yL9-4m-V9q" firstAttribute="leading" secondItem="2rd-lI-5Pt" secondAttribute="leadingMargin" constant="16" id="E7O-Gv-yCj"/>
+                            <constraint firstItem="d1b-s2-v1U" firstAttribute="leading" secondItem="gyd-yp-gi3" secondAttribute="leading" id="Gov-gZ-rc1"/>
+                            <constraint firstItem="yL9-4m-V9q" firstAttribute="top" secondItem="kBx-SN-cyJ" secondAttribute="bottom" constant="8" id="H99-lT-Aao"/>
+                            <constraint firstItem="gyd-yp-gi3" firstAttribute="top" secondItem="yL9-4m-V9q" secondAttribute="bottom" constant="31" id="Itv-Fz-6jC"/>
+                            <constraint firstItem="d1b-s2-v1U" firstAttribute="top" secondItem="gyd-yp-gi3" secondAttribute="bottom" constant="29" id="jZU-TS-l1C"/>
+                            <constraint firstItem="gyd-yp-gi3" firstAttribute="leading" secondItem="yL9-4m-V9q" secondAttribute="leading" id="tfn-g9-GWW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="RMg-VP-n4V" id="glo-a4-T52"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P6F-q0-awA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="RMg-VP-n4V">
+                    <connections>
+                        <outlet property="delegate" destination="oR3-7O-l30" id="e5r-9d-2R7"/>
+                        <outlet property="searchBar" destination="yL9-4m-V9q" id="2po-p1-AVd"/>
+                        <outlet property="searchContentsController" destination="oR3-7O-l30" id="GYu-By-sCH"/>
+                        <outlet property="searchResultsDataSource" destination="oR3-7O-l30" id="7uN-eo-hOU"/>
+                        <outlet property="searchResultsDelegate" destination="oR3-7O-l30" id="HQs-KF-Pyu"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="3373" y="1884"/>
+        </scene>
+        <!--Contact View Controller-->
+        <scene sceneID="B4h-qp-tam">
+            <objects>
+                <viewController id="UVo-wR-esH" customClass="ContactViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vht-sX-vJN"/>
+                        <viewControllerLayoutGuide type="bottom" id="yNE-zr-EFz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e5k-Vf-Hc9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yck-77-bJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4101" y="1878"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4NM-Wf-d8G">
@@ -636,7 +731,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新的朋友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrd-LH-Kaa">
                                         <rect key="frame" x="98" y="29" width="68" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -672,7 +767,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-Fa-tWC">
                                                     <rect key="frame" x="142" y="29" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -707,6 +802,7 @@
                     <connections>
                         <outlet property="friendCreate" destination="RY5-3p-dIC" id="1uf-dQ-dR8"/>
                         <outlet property="friendTable" destination="BNh-8L-daM" id="wfa-CO-8Z1"/>
+                        <segue destination="oR3-7O-l30" kind="show" id="AEC-LA-4Gt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRG-Yn-8Vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
