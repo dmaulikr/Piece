@@ -11,6 +11,8 @@
 
 @interface PeopleViewController()
 @property (nonatomic, retain) NSArray *frinedsArray;
+@property (weak, nonatomic) IBOutlet UIView *addFriendView;
+
 @end
 
 @implementation PeopleViewController
@@ -22,11 +24,24 @@
     
     self.friendTable.delegate = self;
     self.friendTable.dataSource = self;
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleSingleTap:)];
+    [self.addFriendView addGestureRecognizer:singleFingerTap];
+    
+ 
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer
+{
+    NSLog(@"press click on add friend view.");
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.frinedsArray.count;
 }
+
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,4 +64,5 @@
 {
     
 }
+
 @end
