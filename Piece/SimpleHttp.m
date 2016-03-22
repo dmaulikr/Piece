@@ -297,4 +297,29 @@
     
 }
 
++ (void)getUserInfo: (NSString *)phone responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    // Use a session with a custom configuration
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    NSString *avatarURL = [NSString stringWithFormat:@"http://127.0.0.1:3000/friends/findbyphone"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
+    request.HTTPMethod = @"POST";
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSDictionary *dictionary = @{@"phone":phone};
+    NSError *error = nil;
+    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
+    request.HTTPBody = bodyData;
+    
+    if (!error) {
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                    completionHandler:block];
+        [dataTask resume];
+    }
+    
+}
+
 @end

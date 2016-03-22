@@ -36,6 +36,9 @@
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer
 {
     NSLog(@"press click on add friend view.");
+    
+    [self performSegueWithIdentifier:@"addFriend" sender:self];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

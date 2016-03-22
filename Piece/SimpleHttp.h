@@ -21,6 +21,7 @@
 + (void)updateProfile: (NSString *)userId withGender:(NSString *)gender withBirthDay:(NSString *)birthDay withBirthPlace:(NSString *)birthPlace;
 + (void)getNote: (NSString *)userId responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
 + (void)createNote: (NSString *)userId withNote:(NSString *)note;
++ (void)getUserInfo: (NSString *)userId responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
 @end
 
 #endif /* SimpleHttp_h */
