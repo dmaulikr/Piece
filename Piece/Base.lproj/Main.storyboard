@@ -639,6 +639,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="friendSearch" destination="PDa-0x-Y19" id="FBA-oM-tzW"/>
+                        <outlet property="searchList" destination="IGs-DA-MkP" id="Oo2-4d-4Nl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lzs-Z7-mNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

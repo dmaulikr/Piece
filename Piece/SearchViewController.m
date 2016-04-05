@@ -11,7 +11,7 @@
 
 @interface SearchViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *friendSearch;
-@property (strong, nonatomic) IBOutlet UISearchDisplayController *friendSearchDisplay;
+@property (weak, nonatomic) IBOutlet UITableView *searchList;
 
 @end
 
@@ -25,9 +25,6 @@ NSArray *results;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.friendSearch.delegate = self;
-    self.friendSearchDisplay.delegate = self;
-    self.friendSearchDisplay.searchResultsDataSource = self;
-    self.friendSearchDisplay.searchResultsDelegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
