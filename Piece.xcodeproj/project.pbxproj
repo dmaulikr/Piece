@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D1036941C429CF6004AE991 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1036931C429CF6004AE991 /* AddressBook.framework */; };
 		7D13D8691C4293D6004416EF /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D8681C4293D6004416EF /* AddFriendViewController.m */; };
 		7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D86B1C429B62004416EF /* ContactViewController.m */; };
 		7D3E56941C2EC94700C923DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3E56931C2EC94700C923DC /* CFNetwork.framework */; };
@@ -29,6 +28,7 @@
 		7D47630C1BEA4B8D007CF6E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D47630A1BEA4B8D007CF6E6 /* LaunchScreen.storyboard */; };
 		7D4A510F1C2837A800527350 /* MessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4A510E1C2837A800527350 /* MessageTableViewController.m */; };
 		7D526C141BFCB837005D4D1F /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D526C131BFCB837005D4D1F /* NoteViewController.m */; };
+		7D55F16C1CC29CC000616698 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D55F16B1CC29CC000616698 /* Contacts.framework */; };
 		7D6E5A5E1BF23E4B00D3F7B0 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D6E5A591BF23E4B00D3F7B0 /* SMS_SDKLocalizable.strings */; };
 		7D6E5A5F1BF23E4B00D3F7B0 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A5B1BF23E4B00D3F7B0 /* MOBFoundation.framework */; };
 		7D6E5A601BF23E4B00D3F7B0 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A5C1BF23E4B00D3F7B0 /* SMS_SDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -48,7 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7D1036931C429CF6004AE991 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		7D13D8671C4293D6004416EF /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		7D13D8681C4293D6004416EF /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		7D13D86A1C429B62004416EF /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		7D4A510E1C2837A800527350 /* MessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewController.m; sourceTree = "<group>"; };
 		7D526C121BFCB837005D4D1F /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		7D526C131BFCB837005D4D1F /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		7D55F16B1CC29CC000616698 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		7D6E5A5A1BF23E4B00D3F7B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		7D6E5A5B1BF23E4B00D3F7B0 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		7D6E5A5C1BF23E4B00D3F7B0 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D1036941C429CF6004AE991 /* AddressBook.framework in Frameworks */,
+				7D55F16C1CC29CC000616698 /* Contacts.framework in Frameworks */,
 				7D3E56A21C2EC99000C923DC /* Security.framework in Frameworks */,
 				7D3E56A01C2EC98700C923DC /* UIKit.framework in Frameworks */,
 				7D3E569E1C2EC97E00C923DC /* Foundation.framework in Frameworks */,
@@ -156,7 +156,7 @@
 		7D4762ED1BEA4B8D007CF6E6 = {
 			isa = PBXGroup;
 			children = (
-				7D1036931C429CF6004AE991 /* AddressBook.framework */,
+				7D55F16B1CC29CC000616698 /* Contacts.framework */,
 				7D3E56A81C2ECD1800C923DC /* PushConfig.plist */,
 				7D3E56A31C2ECC3200C923DC /* JPush-iOS-SDK-1.8.8 */,
 				7D3E56A11C2EC99000C923DC /* Security.framework */,
