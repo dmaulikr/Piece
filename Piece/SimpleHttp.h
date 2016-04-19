@@ -22,6 +22,7 @@
 + (void)getNote: (NSString *)userId responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
 + (void)createNote: (NSString *)userId withNote:(NSString *)note;
 + (void)getUserInfo: (NSString *)userId responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
++ (void)contactSync: (NSString *)userId withContacts: (NSString *)contacts responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
 @end
 
 #endif /* SimpleHttp_h */

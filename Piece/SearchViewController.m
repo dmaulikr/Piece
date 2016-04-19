@@ -61,7 +61,7 @@
             } else {
                 NSLog(@"%@", dict[@"friend"]);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.list = [[NSArray alloc] initWithObjects:dict[@"friend"][@       "user_name"], nil];
+                    self.list = [[NSArray alloc] initWithObjects:dict[@"friend"][@"user_name"], nil];
                     [self.searchList reloadData];
                 });
             }

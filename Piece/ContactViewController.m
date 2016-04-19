@@ -7,6 +7,7 @@
 //
 
 #import "ContactViewController.h"
+#import "SimpleHttp.h"
 @import Contacts;
 
 @interface ContactViewController ()
@@ -16,6 +17,7 @@
 
 @implementation ContactViewController
 
+extern NSString *userId;
 @synthesize list = _list;
 
 - (void)viewDidLoad {
@@ -76,7 +78,7 @@
     NSMutableArray *contacts = [NSMutableArray array];
     
     NSError *fetchError;
-    CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactIdentifierKey, [CNContactFormatter descriptorForRequiredKeysForStyle:CNContactFormatterStyleFullName]]];
+    CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactIdentifierKey, CNContactPhoneNumbersKey, [CNContactFormatter descriptorForRequiredKeysForStyle:CNContactFormatterStyleFullName]]];
     
     BOOL success = [store enumerateContactsWithFetchRequest:request error:&fetchError usingBlock:^(CNContact *contact, BOOL *stop) {
         [contacts addObject:contact];
@@ -89,12 +91,47 @@
     NSMutableArray *contactList = [[NSMutableArray alloc] init];
     for (CNContact *contact in contacts) {
         NSString *string = [formatter stringFromContact:contact];
-        
+        NSArray *phoneNumbs = contact.phoneNumbers;
+        NSString *phoneValue;
+        for (CNLabeledValue *labeledValue in phoneNumbs) {
+
+            NSString *phoneLabel = labeledValue.label;
+            
+            CNPhoneNumber *phoneNumer = labeledValue.value;
+            phoneValue = phoneNumer.stringValue;
+            
+            NSLog(@"phone=%@ %@", phoneLabel, phoneValue);
+        }
         NSLog(@"contact = %@", string);
-        [contactList addObject:string];
+        NSDictionary *contactDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                             string, @"contact",
+                                             phoneValue, @"number",
+                                             nil];
+        
+        [contactList addObject:contactDictionary];
         
     }
-    self.list = contactList;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:contactList options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [SimpleHttp contactSync:userId withContacts:jsonString responseBlock:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            //NSLog(@"content is %@", dict[@"content"]);
+            NSMutableArray *contactList = [[NSMutableArray alloc]init];
+            for(NSDictionary *element in dict[@"content"]) {
+                NSString *result = [element[@"fullName"] stringByAppendingString:
+                                    [NSString stringWithFormat:@"%@",element[@"status"]]];
+                [contactList addObject:result];
+            }
+            self.list = contactList;
+            NSLog(@"content is %@", self.list);
+            [self.ContactList reloadData];
+
+        } else {
+            NSLog(@"error : %@", error);
+        }
+    }];
+    
 
 }
 
