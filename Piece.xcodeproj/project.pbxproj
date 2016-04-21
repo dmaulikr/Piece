@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7D13D8691C4293D6004416EF /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D8681C4293D6004416EF /* AddFriendViewController.m */; };
 		7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D86B1C429B62004416EF /* ContactViewController.m */; };
+		7D2728801CC928A4007E5875 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D27287F1CC928A4007E5875 /* Realm.framework */; };
+		7D2728811CC928A4007E5875 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D27287F1CC928A4007E5875 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D3E56941C2EC94700C923DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3E56931C2EC94700C923DC /* CFNetwork.framework */; };
 		7D3E56961C2EC95600C923DC /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3E56951C2EC95600C923DC /* CoreFoundation.framework */; };
 		7D3E56981C2EC96300C923DC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3E56971C2EC96300C923DC /* CoreTelephony.framework */; };
@@ -43,15 +45,32 @@
 		7D917F3F1BFA13A800F332C2 /* ANRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D917F3E1BFA13A800F332C2 /* ANRImageStore.m */; };
 		7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */; };
 		7DBC7D4D1CA18CE800F44B6D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC7D4C1CA18CE800F44B6D /* SearchViewController.m */; };
+		7DE083DB1CC9313600E6551C /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE083DA1CC9313600E6551C /* Friend.m */; };
+		7DE083DF1CC9325E00E6551C /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE083DE1CC9325E00E6551C /* Letter.m */; };
 		7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE50B061BF7895B004E494F /* SimpleHttp.m */; };
 		7DE719E01C4149C900C1AA3E /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE719DF1C4149C900C1AA3E /* FriendTableViewCell.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D2728821CC928A4007E5875 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D2728811CC928A4007E5875 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D13D8671C4293D6004416EF /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		7D13D8681C4293D6004416EF /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		7D13D86A1C429B62004416EF /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		7D13D86B1C429B62004416EF /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		7D27287F1CC928A4007E5875 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		7D3E56931C2EC94700C923DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7D3E56951C2EC95600C923DC /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		7D3E56971C2EC96300C923DC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -100,6 +119,10 @@
 		7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		7DBC7D4B1CA18CE800F44B6D /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		7DBC7D4C1CA18CE800F44B6D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		7DE083D91CC9313600E6551C /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friend.h; path = Model/Friend.h; sourceTree = "<group>"; };
+		7DE083DA1CC9313600E6551C /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friend.m; path = Model/Friend.m; sourceTree = "<group>"; };
+		7DE083DD1CC9325E00E6551C /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
+		7DE083DE1CC9325E00E6551C /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
 		7DE50B061BF7895B004E494F /* SimpleHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleHttp.m; sourceTree = "<group>"; };
 		7DE50B081BF7896C004E494F /* SimpleHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHttp.h; sourceTree = "<group>"; };
 		7DE719DE1C4149C900C1AA3E /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
@@ -112,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2728801CC928A4007E5875 /* Realm.framework in Frameworks */,
 				7D55F16C1CC29CC000616698 /* Contacts.framework in Frameworks */,
 				7D3E56A21C2EC99000C923DC /* Security.framework in Frameworks */,
 				7D3E56A01C2EC98700C923DC /* UIKit.framework in Frameworks */,
@@ -156,6 +180,7 @@
 		7D4762ED1BEA4B8D007CF6E6 = {
 			isa = PBXGroup;
 			children = (
+				7D27287F1CC928A4007E5875 /* Realm.framework */,
 				7D55F16B1CC29CC000616698 /* Contacts.framework */,
 				7D3E56A81C2ECD1800C923DC /* PushConfig.plist */,
 				7D3E56A31C2ECC3200C923DC /* JPush-iOS-SDK-1.8.8 */,
@@ -188,6 +213,7 @@
 		7D4762F81BEA4B8D007CF6E6 /* Piece */ = {
 			isa = PBXGroup;
 			children = (
+				7DE083DC1CC9314300E6551C /* Model */,
 				7DB8ADE91BF8BBFF009D4193 /* Utilities */,
 				7D6E5A581BF23E4B00D3F7B0 /* SMS_SDK */,
 				7DB8ADE81BF8BAE2009D4193 /* View */,
@@ -262,6 +288,17 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		7DE083DC1CC9314300E6551C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DE083D91CC9313600E6551C /* Friend.h */,
+				7DE083DA1CC9313600E6551C /* Friend.m */,
+				7DE083DD1CC9325E00E6551C /* Letter.h */,
+				7DE083DE1CC9325E00E6551C /* Letter.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,6 +309,8 @@
 				7D4762F21BEA4B8D007CF6E6 /* Sources */,
 				7D4762F31BEA4B8D007CF6E6 /* Frameworks */,
 				7D4762F41BEA4B8D007CF6E6 /* Resources */,
+				7D2728821CC928A4007E5875 /* Embed Frameworks */,
+				7D2728831CC92975007E5875 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -339,6 +378,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D2728831CC92975007E5875 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D4762F21BEA4B8D007CF6E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -351,11 +406,13 @@
 				7D6F5E5F1C2AE909006E1EE6 /* DetailMessageViewController.m in Sources */,
 				7D4763011BEA4B8D007CF6E6 /* ViewController.m in Sources */,
 				7DBC7D4D1CA18CE800F44B6D /* SearchViewController.m in Sources */,
+				7DE083DF1CC9325E00E6551C /* Letter.m in Sources */,
 				7D6F5E5C1C2AD598006E1EE6 /* PeopleViewController.m in Sources */,
 				7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */,
 				7DE719E01C4149C900C1AA3E /* FriendTableViewCell.m in Sources */,
 				7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */,
 				7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */,
+				7DE083DB1CC9313600E6551C /* Friend.m in Sources */,
 				7D4762FE1BEA4B8D007CF6E6 /* AppDelegate.m in Sources */,
 				7D4762FB1BEA4B8D007CF6E6 /* main.m in Sources */,
 				7D526C141BFCB837005D4D1F /* NoteViewController.m in Sources */,
@@ -485,6 +542,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Piece/SMS_SDK",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "/Users/jinxiaoping/Projects/IOS/Piece/Piece/JPush-iOS-SDK-1.8.8/lib";
 				INFOPLIST_FILE = Piece/Info.plist;
@@ -508,6 +566,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Piece/SMS_SDK",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "/Users/jinxiaoping/Projects/IOS/Piece/Piece/JPush-iOS-SDK-1.8.8/lib";
 				INFOPLIST_FILE = Piece/Info.plist;
