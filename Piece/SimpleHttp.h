@@ -23,6 +23,8 @@
 + (void)createNote: (NSString *)userId withNote:(NSString *)note;
 + (void)getUserInfo: (NSString *)userId responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
 + (void)contactSync: (NSString *)userId withContacts: (NSString *)contacts responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
+
++ (void)addFriend: (NSString *)userId withFriend: (NSString *)friend responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block;
 @end
 
 #endif /* SimpleHttp_h */

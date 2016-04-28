@@ -12,7 +12,7 @@
 
 @implementation SimpleHttp
 
-NSString * serverIp = @"192.168.1.109";
+NSString * serverIp = @"192.168.1.113";
 
 + (void)requestLogin:(NSString *)name withPassword:(NSString *)password responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block
 {
@@ -21,7 +21,8 @@ NSString * serverIp = @"192.168.1.109";
     //NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.1.109:3000/users/login"]];
+    NSString *requestURL = [NSString stringWithFormat:@"http://%@:3000/users/login",serverIp];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:requestURL]];
     request.HTTPMethod = @"POST";
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -47,7 +48,8 @@ NSString * serverIp = @"192.168.1.109";
     //NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.1.109:3000/users/register"]];
+    NSString *requestURL = [NSString stringWithFormat:@"http://%@:3000/users/register",serverIp];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:requestURL]];
     request.HTTPMethod = @"POST";
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -83,7 +85,8 @@ NSString * serverIp = @"192.168.1.109";
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
 
-    NSString *avatarURL = [NSString stringWithFormat:@"http://192.168.1.109:3000/profile/upload/%@",userId];
+    
+    NSString *avatarURL = [NSString stringWithFormat:@"http://%@:3000/profile/upload/%@",serverIp,userId];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
     request.HTTPMethod = @"POST";
     
@@ -128,7 +131,7 @@ NSString * serverIp = @"192.168.1.109";
     // Use a session with a custom configuration
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
-    NSString *avatarURL = [NSString stringWithFormat:@"http://192.168.1.109:3000/profile/avatar"];
+    NSString *avatarURL = [NSString stringWithFormat:@"http://%@:3000/profile/avatar",serverIp];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
     request.HTTPMethod = @"POST";
     
@@ -186,7 +189,7 @@ NSString * serverIp = @"192.168.1.109";
     //将body字符串转化为UTF8格式的二进制
     NSData *postData = [body dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSString *avatarURL = [NSString stringWithFormat:@"http://192.168.1.109:3000/profile/upload/%@",userId];
+    NSString *avatarURL = [NSString stringWithFormat:@"http://%@:3000/profile/upload/%@",serverIp,userId];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:avatarURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
@@ -212,7 +215,8 @@ NSString * serverIp = @"192.168.1.109";
 {
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.1.109:3000/profile/update"]];
+    NSString *requestURL = [NSString stringWithFormat:@"http://%@:3000/profile/update",serverIp];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:requestURL]];
     request.HTTPMethod = @"POST";
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -247,7 +251,7 @@ NSString * serverIp = @"192.168.1.109";
     // Use a session with a custom configuration
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
-    NSString *avatarURL = [NSString stringWithFormat:@"http://192.168.1.109:3000/note/note"];
+    NSString *avatarURL = [NSString stringWithFormat:@"http://%@:3000/note/note",serverIp];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
     request.HTTPMethod = @"POST";
     
@@ -269,7 +273,8 @@ NSString * serverIp = @"192.168.1.109";
 {
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.1.109:3000/note"]];
+    NSString *requestURL = [NSString stringWithFormat:@"http://%@:3000/note",serverIp];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:requestURL]];
     request.HTTPMethod = @"POST";
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -305,8 +310,8 @@ NSString * serverIp = @"192.168.1.109";
     // Use a session with a custom configuration
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
-    NSString *avatarURL = [NSString stringWithFormat:@"http://192.168.1.109:3000/friends/findbyphone"];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
+    NSString *requestURL = [NSString stringWithFormat:@"http://%@:3000/friends/findbyphone",serverIp];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:requestURL]];
     request.HTTPMethod = @"POST";
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -330,13 +335,38 @@ NSString * serverIp = @"192.168.1.109";
     // Use a session with a custom configuration
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
-    NSString *avatarURL = [NSString stringWithFormat:@"http://192.168.1.109:3000/friends/contactsync"];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
+    NSString *requestURL = [NSString stringWithFormat:@"http://%@:3000/friends/contactsync",serverIp];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:requestURL]];
     request.HTTPMethod = @"POST";
     
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSDictionary *dictionary = @{@"user_id":userId,@"contacts":contacts};
+    NSError *error = nil;
+    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
+    request.HTTPBody = bodyData;
+    
+    if (!error) {
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                    completionHandler:block];
+        [dataTask resume];
+    }
+    
+}
+
++ (void)addFriend:(NSString *)userId withFriend:(NSString *)friend responseBlock:(void (^)(NSData *data, NSURLResponse *response, NSError *error))block
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    // Use a session with a custom configuration
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    NSString *requestURL = [NSString stringWithFormat:@"http://%@:3000/friends/request",serverIp];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:requestURL]];
+    request.HTTPMethod = @"POST";
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSDictionary *dictionary = @{@"user_id":userId,@"friend_id":friend};
     NSError *error = nil;
     NSData *bodyData = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
     request.HTTPBody = bodyData;

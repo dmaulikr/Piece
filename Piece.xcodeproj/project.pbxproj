@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D125A751CD2663E004AC017 /* FriendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D125A741CD2663E004AC017 /* FriendDetailViewController.m */; };
 		7D13D8691C4293D6004416EF /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D8681C4293D6004416EF /* AddFriendViewController.m */; };
 		7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D86B1C429B62004416EF /* ContactViewController.m */; };
 		7D2728801CC928A4007E5875 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D27287F1CC928A4007E5875 /* Realm.framework */; };
@@ -45,8 +46,7 @@
 		7D917F3F1BFA13A800F332C2 /* ANRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D917F3E1BFA13A800F332C2 /* ANRImageStore.m */; };
 		7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */; };
 		7DBC7D4D1CA18CE800F44B6D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC7D4C1CA18CE800F44B6D /* SearchViewController.m */; };
-		7DE083DB1CC9313600E6551C /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE083DA1CC9313600E6551C /* Friend.m */; };
-		7DE083DF1CC9325E00E6551C /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE083DE1CC9325E00E6551C /* Letter.m */; };
+		7DE083DB1CC9313600E6551C /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE083DA1CC9313600E6551C /* DataModel.m */; };
 		7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE50B061BF7895B004E494F /* SimpleHttp.m */; };
 		7DE719E01C4149C900C1AA3E /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE719DF1C4149C900C1AA3E /* FriendTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -66,6 +66,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D125A731CD2663E004AC017 /* FriendDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailViewController.h; sourceTree = "<group>"; };
+		7D125A741CD2663E004AC017 /* FriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailViewController.m; sourceTree = "<group>"; };
 		7D13D8671C4293D6004416EF /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		7D13D8681C4293D6004416EF /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		7D13D86A1C429B62004416EF /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
@@ -119,10 +121,8 @@
 		7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		7DBC7D4B1CA18CE800F44B6D /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		7DBC7D4C1CA18CE800F44B6D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		7DE083D91CC9313600E6551C /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friend.h; path = Model/Friend.h; sourceTree = "<group>"; };
-		7DE083DA1CC9313600E6551C /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friend.m; path = Model/Friend.m; sourceTree = "<group>"; };
-		7DE083DD1CC9325E00E6551C /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
-		7DE083DE1CC9325E00E6551C /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
+		7DE083D91CC9313600E6551C /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataModel.h; path = Model/DataModel.h; sourceTree = "<group>"; };
+		7DE083DA1CC9313600E6551C /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataModel.m; path = Model/DataModel.m; sourceTree = "<group>"; };
 		7DE50B061BF7895B004E494F /* SimpleHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleHttp.m; sourceTree = "<group>"; };
 		7DE50B081BF7896C004E494F /* SimpleHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHttp.h; sourceTree = "<group>"; };
 		7DE719DE1C4149C900C1AA3E /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
@@ -250,6 +250,8 @@
 		7DB8ADE81BF8BAE2009D4193 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7D125A731CD2663E004AC017 /* FriendDetailViewController.h */,
+				7D125A741CD2663E004AC017 /* FriendDetailViewController.m */,
 				7D13D86A1C429B62004416EF /* ContactViewController.h */,
 				7D13D86B1C429B62004416EF /* ContactViewController.m */,
 				7D13D8671C4293D6004416EF /* AddFriendViewController.h */,
@@ -291,10 +293,8 @@
 		7DE083DC1CC9314300E6551C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7DE083D91CC9313600E6551C /* Friend.h */,
-				7DE083DA1CC9313600E6551C /* Friend.m */,
-				7DE083DD1CC9325E00E6551C /* Letter.h */,
-				7DE083DE1CC9325E00E6551C /* Letter.m */,
+				7DE083D91CC9313600E6551C /* DataModel.h */,
+				7DE083DA1CC9313600E6551C /* DataModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -406,13 +406,13 @@
 				7D6F5E5F1C2AE909006E1EE6 /* DetailMessageViewController.m in Sources */,
 				7D4763011BEA4B8D007CF6E6 /* ViewController.m in Sources */,
 				7DBC7D4D1CA18CE800F44B6D /* SearchViewController.m in Sources */,
-				7DE083DF1CC9325E00E6551C /* Letter.m in Sources */,
 				7D6F5E5C1C2AD598006E1EE6 /* PeopleViewController.m in Sources */,
 				7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */,
 				7DE719E01C4149C900C1AA3E /* FriendTableViewCell.m in Sources */,
 				7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */,
 				7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */,
-				7DE083DB1CC9313600E6551C /* Friend.m in Sources */,
+				7DE083DB1CC9313600E6551C /* DataModel.m in Sources */,
+				7D125A751CD2663E004AC017 /* FriendDetailViewController.m in Sources */,
 				7D4762FE1BEA4B8D007CF6E6 /* AppDelegate.m in Sources */,
 				7D4762FB1BEA4B8D007CF6E6 /* main.m in Sources */,
 				7D526C141BFCB837005D4D1F /* NoteViewController.m in Sources */,

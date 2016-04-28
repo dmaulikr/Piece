@@ -29,7 +29,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-Vt-DvS">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-Vt-DvS">
                                         <rect key="frame" x="0.0" y="34" width="240" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -45,7 +45,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gS-5H-7ez">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gS-5H-7ez">
                                         <rect key="frame" x="0.0" y="134" width="240" height="33"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
@@ -675,11 +675,66 @@
                     <connections>
                         <outlet property="friendSearch" destination="PDa-0x-Y19" id="FBA-oM-tzW"/>
                         <outlet property="searchList" destination="IGs-DA-MkP" id="Oo2-4d-4Nl"/>
+                        <segue destination="v80-dO-C5Y" kind="show" identifier="detailFriend" id="vod-qS-bRU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lzs-Z7-mNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4401" y="1501"/>
+        </scene>
+        <!--Friend Detail View Controller-->
+        <scene sceneID="28x-mp-B66">
+            <objects>
+                <viewController id="v80-dO-C5Y" customClass="FriendDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DqN-2u-GSa"/>
+                        <viewControllerLayoutGuide type="bottom" id="SN7-qj-l1H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OZI-RK-TxA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2M-YZ-zO8">
+                                <rect key="frame" x="42" y="169" width="458" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add Friend">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFriend:" destination="v80-dO-C5Y" eventType="touchUpInside" id="9av-WE-nrA"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mKg-si-Ffs">
+                                <rect key="frame" x="42" y="94" width="458" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="4Ro-hF-8uu"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mKg-si-Ffs" firstAttribute="top" secondItem="DqN-2u-GSa" secondAttribute="bottom" constant="30" id="IAV-KQ-sOt"/>
+                            <constraint firstItem="i2M-YZ-zO8" firstAttribute="leading" secondItem="mKg-si-Ffs" secondAttribute="leading" id="MbH-85-Jp5"/>
+                            <constraint firstItem="i2M-YZ-zO8" firstAttribute="width" secondItem="mKg-si-Ffs" secondAttribute="width" id="QMj-GT-mC5"/>
+                            <constraint firstItem="mKg-si-Ffs" firstAttribute="leading" secondItem="OZI-RK-TxA" secondAttribute="leadingMargin" constant="22" id="oNH-A7-AEE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mKg-si-Ffs" secondAttribute="trailing" constant="80" id="rb0-N2-01B"/>
+                            <constraint firstItem="i2M-YZ-zO8" firstAttribute="top" secondItem="mKg-si-Ffs" secondAttribute="bottom" constant="33" id="vZ1-xQ-s41"/>
+                            <constraint firstItem="i2M-YZ-zO8" firstAttribute="height" secondItem="mKg-si-Ffs" secondAttribute="height" id="vlJ-kO-pK2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addFriend" destination="i2M-YZ-zO8" id="e5l-uz-noQ"/>
+                        <outlet property="friendMessage" destination="mKg-si-Ffs" id="rRD-0q-OBl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tjj-fc-2MF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5101" y="1501"/>
         </scene>
         <!--Contact View Controller-->
         <scene sceneID="B4h-qp-tam">

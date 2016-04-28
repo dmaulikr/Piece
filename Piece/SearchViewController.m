@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "SimpleHttp.h"
+#import "FriendDetailViewController.h"
 
 @interface SearchViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *friendSearch;
@@ -18,7 +19,7 @@
 @implementation SearchViewController
 
 @synthesize list = _list;
-
+NSString *transformMessage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,6 +96,25 @@
     NSLog(@"row text: %@", [self.list objectAtIndex:row]);
     ResultTableView.textLabel.text = [self.list objectAtIndex:row];
     return ResultTableView;
+}
+
+#pragma mark Table Delegate Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger row = [indexPath row];
+    transformMessage = [[NSString alloc]initWithFormat:@"From %@!",[self.list objectAtIndex:row]];
+    
+    [self performSegueWithIdentifier:@"detailFriend" sender:nil];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier  isEqual: @"detailFriend"]) {
+        FriendDetailViewController *friendDetail = (FriendDetailViewController *)segue.destinationViewController;
+        [friendDetail setMessageText:transformMessage];
+    }
+    
 }
 
 @end

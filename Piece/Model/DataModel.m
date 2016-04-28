@@ -6,7 +6,7 @@
 //  Copyright © 2016年 金小平. All rights reserved.
 //
 
-#import "Friend.h"
+#import "DataModel.h"
 
 @implementation Friend
 
@@ -23,5 +23,13 @@
 //{
 //    return @[];
 //}
+
+@end
+
+@implementation Letter
+
+- (NSArray *) fromWho {
+    return [self linkingObjectsOfClass:@"Friend" forProperty:@"letters"];
+}
 
 @end
