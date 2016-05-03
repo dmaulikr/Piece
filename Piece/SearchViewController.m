@@ -9,6 +9,7 @@
 #import "SearchViewController.h"
 #import "SimpleHttp.h"
 #import "FriendDetailViewController.h"
+#import "FriendType.h"
 
 @interface SearchViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *friendSearch;
@@ -19,14 +20,13 @@
 @implementation SearchViewController
 
 @synthesize list = _list;
-NSString *transformMessage;
+NSString *detailFriendMessage;
+NSString *detailfriendId;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSArray *array = [[NSArray alloc] initWithObjects:@"美国", @"菲律宾",
-                      @"黄岩岛", @"中国", @"泰国", @"越南", @"老挝",
-                      @"日本" , nil];
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:1];
     self.list = array;
     
     self.friendSearch.delegate = self;
@@ -62,7 +62,11 @@ NSString *transformMessage;
             } else {
                 NSLog(@"%@", dict[@"friend"]);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.list = [[NSArray alloc] initWithObjects:dict[@"friend"][@"user_name"], nil];
+                    FriendType *ft = [[FriendType alloc] init];
+                    ft.friendId = dict[@"friend"][@"_id"];
+                    ft.friendName = dict[@"friend"][@"user_name"];
+                    //self.list = [[NSArray alloc] initWithObjects:dict[@"friend"][@"user_name"], nil];
+                    [self.list addObject:ft];
                     [self.searchList reloadData];
                 });
             }
@@ -94,7 +98,8 @@ NSString *transformMessage;
     
     NSUInteger row = [indexPath row];
     NSLog(@"row text: %@", [self.list objectAtIndex:row]);
-    ResultTableView.textLabel.text = [self.list objectAtIndex:row];
+    FriendType *resultFt = [self.list objectAtIndex:row];
+    ResultTableView.textLabel.text = resultFt.friendName;
     return ResultTableView;
 }
 
@@ -102,7 +107,10 @@ NSString *transformMessage;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger row = [indexPath row];
-    transformMessage = [[NSString alloc]initWithFormat:@"From %@!",[self.list objectAtIndex:row]];
+    FriendType *passFt = [self.list objectAtIndex:row];
+    detailFriendMessage = [[NSString alloc]initWithFormat:@"From %@!",passFt.friendName];
+    
+    detailfriendId = passFt.friendId;
     
     [self performSegueWithIdentifier:@"detailFriend" sender:nil];
     
@@ -112,7 +120,8 @@ NSString *transformMessage;
 {
     if ([segue.identifier  isEqual: @"detailFriend"]) {
         FriendDetailViewController *friendDetail = (FriendDetailViewController *)segue.destinationViewController;
-        [friendDetail setMessageText:transformMessage];
+        [friendDetail setFriendText:detailFriendMessage];
+        [friendDetail setFriendId:detailfriendId];
     }
     
 }

@@ -32,6 +32,7 @@
 		7D4A510F1C2837A800527350 /* MessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4A510E1C2837A800527350 /* MessageTableViewController.m */; };
 		7D526C141BFCB837005D4D1F /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D526C131BFCB837005D4D1F /* NoteViewController.m */; };
 		7D55F16C1CC29CC000616698 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D55F16B1CC29CC000616698 /* Contacts.framework */; };
+		7D56D71C1CD7B0A3000FC90E /* FriendType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D56D71B1CD7B0A3000FC90E /* FriendType.m */; };
 		7D6E5A5E1BF23E4B00D3F7B0 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D6E5A591BF23E4B00D3F7B0 /* SMS_SDKLocalizable.strings */; };
 		7D6E5A5F1BF23E4B00D3F7B0 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A5B1BF23E4B00D3F7B0 /* MOBFoundation.framework */; };
 		7D6E5A601BF23E4B00D3F7B0 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A5C1BF23E4B00D3F7B0 /* SMS_SDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -100,6 +101,8 @@
 		7D526C121BFCB837005D4D1F /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		7D526C131BFCB837005D4D1F /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		7D55F16B1CC29CC000616698 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		7D56D71A1CD7B0A3000FC90E /* FriendType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendType.h; sourceTree = "<group>"; };
+		7D56D71B1CD7B0A3000FC90E /* FriendType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendType.m; sourceTree = "<group>"; };
 		7D6E5A5A1BF23E4B00D3F7B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		7D6E5A5B1BF23E4B00D3F7B0 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		7D6E5A5C1BF23E4B00D3F7B0 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 			children = (
 				7DE083D91CC9313600E6551C /* DataModel.h */,
 				7DE083DA1CC9313600E6551C /* DataModel.m */,
+				7D56D71A1CD7B0A3000FC90E /* FriendType.h */,
+				7D56D71B1CD7B0A3000FC90E /* FriendType.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				7D4762FE1BEA4B8D007CF6E6 /* AppDelegate.m in Sources */,
 				7D4762FB1BEA4B8D007CF6E6 /* main.m in Sources */,
 				7D526C141BFCB837005D4D1F /* NoteViewController.m in Sources */,
+				7D56D71C1CD7B0A3000FC90E /* FriendType.m in Sources */,
 				7D917F3F1BFA13A800F332C2 /* ANRImageStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FriendDetailViewController : UIViewController
-- (void)setMessageText: (NSString *)value;
+- (void)setFriendText: (NSString *)value;
+- (void)setFriendId: (NSString *)value;
 @end

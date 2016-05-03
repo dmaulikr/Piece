@@ -17,14 +17,14 @@
 
 @implementation FriendDetailViewController
 
-NSString *messageText;
+NSString *friendText;
 NSString *friendId;
 extern NSString *userId;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.friendMessage setText:messageText];
+    [self.friendMessage setText:friendText];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,9 +52,15 @@ extern NSString *userId;
 }
 */
 
-- (void)setMessageText: (NSString *)value
+- (void)setFriendText: (NSString *)value
 {
-    messageText = value;
+    friendText = value;
 }
+
+- (void)setFriendId: (NSString *)value
+{
+    friendId = value;
+}
+
 
 @end

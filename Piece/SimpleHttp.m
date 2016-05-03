@@ -12,7 +12,7 @@
 
 @implementation SimpleHttp
 
-NSString * serverIp = @"192.168.1.113";
+NSString * serverIp = @"192.168.1.117";
 
 + (void)requestLogin:(NSString *)name withPassword:(NSString *)password responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block
 {
