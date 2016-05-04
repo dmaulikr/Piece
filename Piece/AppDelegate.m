@@ -33,12 +33,6 @@
                                                        UIUserNotificationTypeSound |
                                                        UIUserNotificationTypeAlert)
                                            categories:nil];
-    } else {
-        //categories 必须为nil
-        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                       UIRemoteNotificationTypeSound |
-                                                       UIRemoteNotificationTypeAlert)
-                                           categories:nil];
     }
     
     // Required
@@ -137,6 +131,17 @@
                                                                dateStyle:NSDateFormatterNoStyle
                                                                timeStyle:NSDateFormatterMediumStyle],
                                 title, content];
+    
+    // handle the custom message from push
+    [APService setLocalNotification:[NSDate dateWithTimeIntervalSinceNow:5]
+                             alertBody:currentContent
+                                 badge:1
+                           alertAction:@"buttonText"
+                         identifierKey:@"identifierKey"
+                              userInfo:nil
+                             soundName:nil];
+    
+
     NSLog(@"%@", currentContent);
     
 }
