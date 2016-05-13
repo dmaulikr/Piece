@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SimpleHttp.h"
-#import "APService.h"
+#import "JPUSHService.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -42,7 +42,7 @@ extern NSString *userId;
                 NSLog(@"%@", dict[@"username"]);
                 userId = dict[@"user_id"];
                 
-                [APService setTags:nil alias:userId callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+                [JPUSHService setTags:nil alias:userId callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
 
                 NSLog(@"user id: %@", userId);
                 dispatch_async(dispatch_get_main_queue(), ^{

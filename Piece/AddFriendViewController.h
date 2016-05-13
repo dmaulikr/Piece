@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddFriendViewController : UIViewController
+@interface AddFriendViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) NSMutableArray *receivedFriendList;
+//- (void)setFriendInfo: (NSString *)name friendId:(NSString *)friendId friendStatus:(NSUInteger)status;
 @end

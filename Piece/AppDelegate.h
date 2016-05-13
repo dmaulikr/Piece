@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+static NSString *appKey = @"72c841e1feb61d6a1502523c";
+static NSString *channel = @"Publish channel";
+static BOOL isProduction = FALSE;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

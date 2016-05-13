@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import <SMS_SDK/SMSSDK.h>
-#import "APService.h"
+#import "JPUSHService.h"
+#import "AddFriendViewController.h"
 
 @interface AppDelegate ()
 
@@ -29,14 +30,18 @@
     // Required
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
         //可以添加自定义categories
-        [APService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+        [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
                                                        UIUserNotificationTypeSound |
                                                        UIUserNotificationTypeAlert)
                                            categories:nil];
     }
     
     // Required
-    [APService setupWithOption:launchOptions];
+    [JPUSHService setupWithOption:launchOptions appKey:appKey
+                          channel:channel
+                 apsForProduction:isProduction
+            advertisingIdentifier:nil];
+    
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     /*
@@ -56,7 +61,7 @@
                       selector:@selector(networkDidLogin:)
                           name:kJPFNetworkDidLoginNotification
                         object:nil];
-     */
+    */
     [defaultCenter addObserver:self
                       selector:@selector(networkDidReceiveMessage:)
                           name:kJPFNetworkDidReceiveMessageNotification
@@ -100,18 +105,18 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     // Required
-    [APService registerDeviceToken:deviceToken];
+    [JPUSHService registerDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     // Required
-    [APService handleRemoteNotification:userInfo];
+    [JPUSHService handleRemoteNotification:userInfo];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 
     // IOS 7 Support Required
-    [APService handleRemoteNotification:userInfo];
+    [JPUSHService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
@@ -133,13 +138,14 @@
                                 title, content];
     
     // handle the custom message from push
-    [APService setLocalNotification:[NSDate dateWithTimeIntervalSinceNow:5]
+    [JPUSHService setLocalNotification:[NSDate dateWithTimeIntervalSinceNow:5]
                              alertBody:currentContent
                                  badge:1
                            alertAction:@"buttonText"
-                         identifierKey:@"identifierKey"
+                         identifierKey:@"JPUSH"
                               userInfo:nil
                              soundName:nil];
+    
     
 
     NSLog(@"%@", currentContent);

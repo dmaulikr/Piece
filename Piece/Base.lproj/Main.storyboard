@@ -620,13 +620,31 @@
                                     <segue destination="UVo-wR-esH" kind="show" id="G8q-6X-1q0"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="abL-OJ-H6L">
+                                <rect key="frame" x="36" y="312" width="360" height="231"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6Bb-wM-ZGd">
+                                        <rect key="frame" x="0.0" y="28" width="360" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Bb-wM-ZGd" id="I1U-dN-gcJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d1b-s2-v1U" firstAttribute="width" secondItem="gyd-yp-gi3" secondAttribute="width" id="6NC-5Y-5W5"/>
+                            <constraint firstItem="abL-OJ-H6L" firstAttribute="width" secondItem="d1b-s2-v1U" secondAttribute="width" id="6Qy-5S-KEm"/>
+                            <constraint firstItem="abL-OJ-H6L" firstAttribute="leading" secondItem="d1b-s2-v1U" secondAttribute="leading" id="F8H-Cq-hCg"/>
                             <constraint firstItem="gyd-yp-gi3" firstAttribute="top" secondItem="lQ2-kP-ks2" secondAttribute="bottom" constant="19" id="L4O-3I-yXV"/>
                             <constraint firstItem="gyd-yp-gi3" firstAttribute="width" secondItem="lQ2-kP-ks2" secondAttribute="width" id="g27-cH-4F1"/>
                             <constraint firstItem="lQ2-kP-ks2" firstAttribute="top" secondItem="kBx-SN-cyJ" secondAttribute="bottom" constant="25" id="goD-M9-X1Q"/>
+                            <constraint firstItem="abL-OJ-H6L" firstAttribute="top" secondItem="d1b-s2-v1U" secondAttribute="bottom" constant="8" id="kwX-Os-jZ7"/>
+                            <constraint firstItem="mt9-pY-Y4X" firstAttribute="top" secondItem="abL-OJ-H6L" secondAttribute="bottom" constant="8" id="lYf-Zd-ZXB"/>
                             <constraint firstItem="gyd-yp-gi3" firstAttribute="leading" secondItem="lQ2-kP-ks2" secondAttribute="leading" id="lj0-5b-gbu"/>
                             <constraint firstItem="gyd-yp-gi3" firstAttribute="height" secondItem="lQ2-kP-ks2" secondAttribute="height" id="mH6-tz-5Fr"/>
                             <constraint firstItem="d1b-s2-v1U" firstAttribute="leading" secondItem="gyd-yp-gi3" secondAttribute="leading" id="nQD-Hd-Xhp"/>
@@ -634,6 +652,10 @@
                             <constraint firstItem="lQ2-kP-ks2" firstAttribute="leading" secondItem="2rd-lI-5Pt" secondAttribute="leadingMargin" constant="16" id="skP-Kw-GCL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="receivedFriend" destination="abL-OJ-H6L" id="lqP-3D-oYu"/>
+                        <segue destination="v80-dO-C5Y" kind="show" identifier="myFriend" id="R84-xF-ofb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6F-q0-awA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -680,7 +702,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lzs-Z7-mNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4401" y="1501"/>
+            <point key="canvasLocation" x="4337" y="1101"/>
         </scene>
         <!--Friend Detail View Controller-->
         <scene sceneID="28x-mp-B66">
@@ -734,7 +756,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tjj-fc-2MF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5101" y="1501"/>
+            <point key="canvasLocation" x="4337" y="1905"/>
         </scene>
         <!--Contact View Controller-->
         <scene sceneID="B4h-qp-tam">
@@ -771,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yck-77-bJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4409" y="2202"/>
+            <point key="canvasLocation" x="4329" y="2722"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4NM-Wf-d8G">
@@ -934,4 +956,7 @@
             <point key="canvasLocation" x="2591" y="1884"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="R84-xF-ofb"/>
+    </inferredMetricsTieBreakers>
 </document>

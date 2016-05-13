@@ -11,4 +11,5 @@
 @interface FriendType : NSObject
 @property NSString             *friendId;
 @property NSString             *friendName;
+@property NSUInteger           status;
 @end
