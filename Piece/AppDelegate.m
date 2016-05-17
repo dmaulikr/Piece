@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "JPUSHService.h"
-#import "AddFriendViewController.h"
+#import "Friend.h"
 
 @interface AppDelegate ()
 
@@ -146,7 +146,17 @@
                               userInfo:nil
                              soundName:nil];
     
-    
+    // Use them like regular Objective‑C objects
+    Friend *mydog = [[Friend alloc] init];
+    mydog.name = @"Rex";
+    mydog.status = 1;
+    NSLog(@"Name of dog: %@", mydog.name);
+    // Persist your data easily
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [realm addObject:mydog];
+    }];
+
 
     NSLog(@"%@", currentContent);
     

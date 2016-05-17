@@ -9,6 +9,7 @@
 #import "AddFriendViewController.h"
 #import "FriendType.h"
 #import "JPUSHService.h"
+#import "Friend.h"
 
 @interface AddFriendViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *receivedFriend;
@@ -36,6 +37,8 @@ NSUInteger myFriendStatus;
     self.receivedFriend.delegate = self;
     self.receivedFriend.dataSource = self;
     
+    
+    [self loadFriendInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,21 +91,27 @@ NSUInteger myFriendStatus;
 }
 
 
-
-/*
-
-- (void)setFriendInfo: (NSString *)name friendId:(NSString *)friendId friendStatus:(NSUInteger)status;
+- (void)loadFriendInfo
 {
+    // Query and update the result in another thread
+    dispatch_async(dispatch_queue_create("background", 0), ^{
+        RLMResults<Friend *> *dogs = [Friend allObjects];
+        for(Friend *theDog in dogs) {
+            FriendType *ft = [[FriendType alloc] init];
+            ft.friendName = theDog.name;
+            
+            NSLog(@"set friend info: %@", ft.friendName);
+            
+            [self.receivedFriendList addObject:ft];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.receivedFriend reloadData];
+        });
+    });
     
-    FriendType *ft = [[FriendType alloc] init];
-    ft.friendId = friendId;
-    ft.friendName = name;
-    
-    NSLog(@"set friend info: %@", name);
 
-    [self.receivedFriendList addObject:ft];
-    [self.receivedFriend reloadData];
 }
- */
+
 
 @end

@@ -45,8 +45,9 @@
 		7D8A88DA1BEF98F5003FEF54 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */; };
 		7D917F3F1BFA13A800F332C2 /* ANRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D917F3E1BFA13A800F332C2 /* ANRImageStore.m */; };
 		7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */; };
+		7DBC7A0C1CEB3F110046F3B6 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC7A0B1CEB3F110046F3B6 /* Friend.m */; };
 		7DBC7D4D1CA18CE800F44B6D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC7D4C1CA18CE800F44B6D /* SearchViewController.m */; };
-		7DE083DB1CC9313600E6551C /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE083DA1CC9313600E6551C /* DataModel.m */; };
+		7DE083DB1CC9313600E6551C /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE083DA1CC9313600E6551C /* Letter.m */; };
 		7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE50B061BF7895B004E494F /* SimpleHttp.m */; };
 		7DE719E01C4149C900C1AA3E /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE719DF1C4149C900C1AA3E /* FriendTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -120,10 +121,12 @@
 		7D917F3E1BFA13A800F332C2 /* ANRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRImageStore.m; sourceTree = "<group>"; };
 		7DB8ADE51BF8BAB4009D4193 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		7DBC7A0A1CEB3F110046F3B6 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		7DBC7A0B1CEB3F110046F3B6 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		7DBC7D4B1CA18CE800F44B6D /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		7DBC7D4C1CA18CE800F44B6D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		7DE083D91CC9313600E6551C /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataModel.h; path = Model/DataModel.h; sourceTree = "<group>"; };
-		7DE083DA1CC9313600E6551C /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataModel.m; path = Model/DataModel.m; sourceTree = "<group>"; };
+		7DE083D91CC9313600E6551C /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Letter.h; path = Model/Letter.h; sourceTree = "<group>"; };
+		7DE083DA1CC9313600E6551C /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Letter.m; path = Model/Letter.m; sourceTree = "<group>"; };
 		7DE50B061BF7895B004E494F /* SimpleHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleHttp.m; sourceTree = "<group>"; };
 		7DE50B081BF7896C004E494F /* SimpleHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHttp.h; sourceTree = "<group>"; };
 		7DE719DE1C4149C900C1AA3E /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
@@ -284,8 +287,10 @@
 		7DE083DC1CC9314300E6551C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7DE083D91CC9313600E6551C /* DataModel.h */,
-				7DE083DA1CC9313600E6551C /* DataModel.m */,
+				7DE083D91CC9313600E6551C /* Letter.h */,
+				7DBC7A0A1CEB3F110046F3B6 /* Friend.h */,
+				7DBC7A0B1CEB3F110046F3B6 /* Friend.m */,
+				7DE083DA1CC9313600E6551C /* Letter.m */,
 				7D56D71A1CD7B0A3000FC90E /* FriendType.h */,
 				7D56D71B1CD7B0A3000FC90E /* FriendType.m */,
 			);
@@ -402,8 +407,9 @@
 				7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */,
 				7DE719E01C4149C900C1AA3E /* FriendTableViewCell.m in Sources */,
 				7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */,
+				7DBC7A0C1CEB3F110046F3B6 /* Friend.m in Sources */,
 				7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */,
-				7DE083DB1CC9313600E6551C /* DataModel.m in Sources */,
+				7DE083DB1CC9313600E6551C /* Letter.m in Sources */,
 				7D125A751CD2663E004AC017 /* FriendDetailViewController.m in Sources */,
 				7D4762FE1BEA4B8D007CF6E6 /* AppDelegate.m in Sources */,
 				7D4762FB1BEA4B8D007CF6E6 /* main.m in Sources */,
