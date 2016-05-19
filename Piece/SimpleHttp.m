@@ -12,7 +12,7 @@
 
 @implementation SimpleHttp
 
-NSString * serverIp = @"192.168.1.117";
+NSString * serverIp = @"192.168.1.109";
 
 + (void)requestLogin:(NSString *)name withPassword:(NSString *)password responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block
 {
@@ -269,6 +269,32 @@ NSString * serverIp = @"192.168.1.117";
     }
     
 }
+
++ (void)checkNote: (NSString *)userId responseBlock:(void(^)(NSData *data, NSURLResponse *response, NSError *error))block
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    // Use a session with a custom configuration
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    NSString *avatarURL = [NSString stringWithFormat:@"http://%@:3000/note/isNoted",serverIp];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:avatarURL]];
+    request.HTTPMethod = @"POST";
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSDictionary *dictionary = @{@"userId":userId};
+    NSError *error = nil;
+    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:&error];
+    request.HTTPBody = bodyData;
+    
+    if (!error) {
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                    completionHandler:block];
+        [dataTask resume];
+    }
+    
+}
+
 + (void)createNote: (NSString *)userId withNote:(NSString *)note
 {
     NSURLSession *session = [NSURLSession sharedSession];

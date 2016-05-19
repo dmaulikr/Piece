@@ -39,15 +39,29 @@ extern NSString *userId;
             if (dict[@"error"]) {
                 NSLog(@"dictionary error : %@", dict[@"error"]);
             } else {
-                NSLog(@"%@", dict[@"username"]);
+                NSLog(@"dict: %@", dict);
                 userId = dict[@"user_id"];
                 
                 [JPUSHService setTags:nil alias:userId callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
 
                 NSLog(@"user id: %@", userId);
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self performSegueWithIdentifier:@"noteReview" sender:self];
-                });
+                
+                // check note
+                [SimpleHttp checkNote:userId responseBlock:^(NSData *data, NSURLResponse *response, NSError *error) {
+                    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                    NSLog(@"result is : %@", result);
+                    if ([result[@"status"] compare:@"0"] == NSOrderedSame) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self performSegueWithIdentifier:@"noteReview" sender:self];
+                        });
+                    } else {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self performSegueWithIdentifier:@"chatFriend" sender:self];
+                        });
+                    }
+                }];
+                
+
                 
             }
         } else {

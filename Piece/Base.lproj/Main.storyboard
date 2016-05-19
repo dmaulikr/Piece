@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -105,6 +105,7 @@
                         <outlet property="passwordTextField" destination="aSQ-24-LiI" id="Xcc-6Y-R0h"/>
                         <outlet property="usernameTextField" destination="VAq-Vt-DvS" id="2Xj-xu-WS1"/>
                         <segue destination="0FV-Zo-uYO" kind="show" identifier="noteReview" id="jrT-58-0D8"/>
+                        <segue destination="WrV-0B-yQa" kind="show" identifier="chatFriend" id="UkN-0h-zGE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -957,6 +958,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="UkN-0h-zGE"/>
         <segue reference="R84-xF-ofb"/>
     </inferredMetricsTieBreakers>
 </document>
