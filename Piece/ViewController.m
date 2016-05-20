@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SimpleHttp.h"
 #import "JPUSHService.h"
+#import "CHKeychain.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -19,6 +20,12 @@
 @implementation ViewController
 
 extern NSString *userId;
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
 
 - (IBAction)unwindToHome:(UIStoryboardSegue *)segue
 {
@@ -45,6 +52,11 @@ extern NSString *userId;
                 [JPUSHService setTags:nil alias:userId callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
 
                 NSLog(@"user id: %@", userId);
+                // save u/p to Keychain
+                NSMutableDictionary *usernamepasswordKVPairs = [NSMutableDictionary dictionary];
+                [usernamepasswordKVPairs setObject:username forKey:KEY_USERNAME];
+                [usernamepasswordKVPairs setObject:password forKey:KEY_PASSWORD];
+                [CHKeychain save:KEY_USERNAME_PASSWORD data:usernamepasswordKVPairs];
                 
                 // check note
                 [SimpleHttp checkNote:userId responseBlock:^(NSData *data, NSURLResponse *response, NSError *error) {

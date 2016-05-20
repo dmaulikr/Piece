@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D0D6F2A1CEF71D400974539 /* Welcome.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D6F291CEF71D400974539 /* Welcome.m */; };
 		7D125A751CD2663E004AC017 /* FriendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D125A741CD2663E004AC017 /* FriendDetailViewController.m */; };
 		7D13D8691C4293D6004416EF /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D8681C4293D6004416EF /* AddFriendViewController.m */; };
 		7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D86B1C429B62004416EF /* ContactViewController.m */; };
@@ -47,6 +48,7 @@
 		7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */; };
 		7DBC7A0C1CEB3F110046F3B6 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC7A0B1CEB3F110046F3B6 /* Friend.m */; };
 		7DBC7D4D1CA18CE800F44B6D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC7D4C1CA18CE800F44B6D /* SearchViewController.m */; };
+		7DDF4D551CEE1736008BB0FD /* CHKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDF4D541CEE1736008BB0FD /* CHKeychain.m */; };
 		7DE083DB1CC9313600E6551C /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE083DA1CC9313600E6551C /* Letter.m */; };
 		7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE50B061BF7895B004E494F /* SimpleHttp.m */; };
 		7DE719E01C4149C900C1AA3E /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE719DF1C4149C900C1AA3E /* FriendTableViewCell.m */; };
@@ -67,6 +69,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D0D6F281CEF71D400974539 /* Welcome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Welcome.h; sourceTree = "<group>"; };
+		7D0D6F291CEF71D400974539 /* Welcome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Welcome.m; sourceTree = "<group>"; };
 		7D125A731CD2663E004AC017 /* FriendDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailViewController.h; sourceTree = "<group>"; };
 		7D125A741CD2663E004AC017 /* FriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailViewController.m; sourceTree = "<group>"; };
 		7D13D8671C4293D6004416EF /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 		7DBC7A0B1CEB3F110046F3B6 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		7DBC7D4B1CA18CE800F44B6D /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		7DBC7D4C1CA18CE800F44B6D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		7DDF4D541CEE1736008BB0FD /* CHKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHKeychain.m; sourceTree = "<group>"; };
+		7DDF4D561CEE1753008BB0FD /* CHKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHKeychain.h; sourceTree = "<group>"; };
 		7DE083D91CC9313600E6551C /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Letter.h; path = Model/Letter.h; sourceTree = "<group>"; };
 		7DE083DA1CC9313600E6551C /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Letter.m; path = Model/Letter.m; sourceTree = "<group>"; };
 		7DE50B061BF7895B004E494F /* SimpleHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleHttp.m; sourceTree = "<group>"; };
@@ -139,9 +145,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3E56A21C2EC99000C923DC /* Security.framework in Frameworks */,
 				7D2728801CC928A4007E5875 /* Realm.framework in Frameworks */,
 				7D55F16C1CC29CC000616698 /* Contacts.framework in Frameworks */,
-				7D3E56A21C2EC99000C923DC /* Security.framework in Frameworks */,
 				7D3E56A01C2EC98700C923DC /* UIKit.framework in Frameworks */,
 				7D3E569E1C2EC97E00C923DC /* Foundation.framework in Frameworks */,
 				7D3E569C1C2EC97600C923DC /* CoreGraphics.framework in Frameworks */,
@@ -163,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D0D6F261CEF712800974539 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				7D0D6F281CEF71D400974539 /* Welcome.h */,
+				7D0D6F291CEF71D400974539 /* Welcome.m */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
 		7D21599C1CE63453006D6D42 /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +222,7 @@
 		7D4762F81BEA4B8D007CF6E6 /* Piece */ = {
 			isa = PBXGroup;
 			children = (
+				7DDF4D531CEE16CC008BB0FD /* Utility */,
 				7DE083DC1CC9314300E6551C /* Model */,
 				7DB8ADE91BF8BBFF009D4193 /* Utilities */,
 				7D6E5A581BF23E4B00D3F7B0 /* SMS_SDK */,
@@ -244,6 +260,7 @@
 		7DB8ADE81BF8BAE2009D4193 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7D0D6F261CEF712800974539 /* Welcome */,
 				7D125A731CD2663E004AC017 /* FriendDetailViewController.h */,
 				7D125A741CD2663E004AC017 /* FriendDetailViewController.m */,
 				7D13D86A1C429B62004416EF /* ContactViewController.h */,
@@ -282,6 +299,15 @@
 				7D917F3E1BFA13A800F332C2 /* ANRImageStore.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		7DDF4D531CEE16CC008BB0FD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7DDF4D541CEE1736008BB0FD /* CHKeychain.m */,
+				7DDF4D561CEE1753008BB0FD /* CHKeychain.h */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		7DE083DC1CC9314300E6551C /* Model */ = {
@@ -402,10 +428,12 @@
 				7D4763071BEA4B8D007CF6E6 /* Piece.xcdatamodeld in Sources */,
 				7D6F5E5F1C2AE909006E1EE6 /* DetailMessageViewController.m in Sources */,
 				7D4763011BEA4B8D007CF6E6 /* ViewController.m in Sources */,
+				7D0D6F2A1CEF71D400974539 /* Welcome.m in Sources */,
 				7DBC7D4D1CA18CE800F44B6D /* SearchViewController.m in Sources */,
 				7D6F5E5C1C2AD598006E1EE6 /* PeopleViewController.m in Sources */,
 				7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */,
 				7DE719E01C4149C900C1AA3E /* FriendTableViewCell.m in Sources */,
+				7DDF4D551CEE1736008BB0FD /* CHKeychain.m in Sources */,
 				7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */,
 				7DBC7A0C1CEB3F110046F3B6 /* Friend.m in Sources */,
 				7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */,
