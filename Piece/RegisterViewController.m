@@ -30,7 +30,8 @@ bool isVerified = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setVerifyHidden:YES];
+    [self setVerifyHidden:NO];
+    [self setPasswordHidden:YES];
 
 }
 

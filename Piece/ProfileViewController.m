@@ -40,6 +40,7 @@ extern NSString *userId;
     self.imageView.clipsToBounds = YES;
     //self.imageView.layer.masksToBounds = YES;
     
+    _genderValue = @"male";
     [self.genderSwitcher addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
     _datePickerView.hidden = true;
     _doneToolbar.hidden = true;
@@ -78,6 +79,8 @@ extern NSString *userId;
             _genderValue = @"female";
             break;
         default:
+            NSLog(@"default clicked.");
+            _genderValue = @"male";
             break;
     }
 }

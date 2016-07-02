@@ -11,6 +11,7 @@
 		7D125A751CD2663E004AC017 /* FriendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D125A741CD2663E004AC017 /* FriendDetailViewController.m */; };
 		7D13D8691C4293D6004416EF /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D8681C4293D6004416EF /* AddFriendViewController.m */; };
 		7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D13D86B1C429B62004416EF /* ContactViewController.m */; };
+		7D147E411CF1F15B00F649C5 /* WriteLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D147E401CF1F15B00F649C5 /* WriteLetter.m */; };
 		7D21599F1CE63453006D6D42 /* jpush-ios-2.1.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D21599D1CE63453006D6D42 /* jpush-ios-2.1.6.a */; };
 		7D2728801CC928A4007E5875 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D27287F1CC928A4007E5875 /* Realm.framework */; };
 		7D2728811CC928A4007E5875 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D27287F1CC928A4007E5875 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -42,7 +43,8 @@
 		7D6E5A681BF2425900D3F7B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A671BF2425900D3F7B0 /* libz.tbd */; };
 		7D6E5A6A1BF2426400D3F7B0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6E5A691BF2426400D3F7B0 /* MessageUI.framework */; };
 		7D6F5E5C1C2AD598006E1EE6 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F5E5B1C2AD598006E1EE6 /* PeopleViewController.m */; };
-		7D6F5E5F1C2AE909006E1EE6 /* DetailMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F5E5E1C2AE909006E1EE6 /* DetailMessageViewController.m */; };
+		7D7660ED1CF4A960004549A9 /* ReadLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7660EC1CF4A960004549A9 /* ReadLetter.m */; };
+		7D7660F01CF4ADA5004549A9 /* DetailMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7660EF1CF4ADA5004549A9 /* DetailMessage.m */; };
 		7D8A88DA1BEF98F5003FEF54 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */; };
 		7D917F3F1BFA13A800F332C2 /* ANRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D917F3E1BFA13A800F332C2 /* ANRImageStore.m */; };
 		7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8ADE61BF8BAB4009D4193 /* ProfileViewController.m */; };
@@ -77,6 +79,8 @@
 		7D13D8681C4293D6004416EF /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		7D13D86A1C429B62004416EF /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		7D13D86B1C429B62004416EF /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		7D147E3F1CF1F15B00F649C5 /* WriteLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteLetter.h; sourceTree = "<group>"; };
+		7D147E401CF1F15B00F649C5 /* WriteLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteLetter.m; sourceTree = "<group>"; };
 		7D21599D1CE63453006D6D42 /* jpush-ios-2.1.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.6.a"; sourceTree = "<group>"; };
 		7D21599E1CE63453006D6D42 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		7D27287F1CC928A4007E5875 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -117,8 +121,10 @@
 		7D6E5A691BF2426400D3F7B0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7D6F5E5A1C2AD598006E1EE6 /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
 		7D6F5E5B1C2AD598006E1EE6 /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
-		7D6F5E5D1C2AE909006E1EE6 /* DetailMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMessageViewController.h; sourceTree = "<group>"; };
-		7D6F5E5E1C2AE909006E1EE6 /* DetailMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMessageViewController.m; sourceTree = "<group>"; };
+		7D7660EB1CF4A960004549A9 /* ReadLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadLetter.h; sourceTree = "<group>"; };
+		7D7660EC1CF4A960004549A9 /* ReadLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadLetter.m; sourceTree = "<group>"; };
+		7D7660EE1CF4ADA5004549A9 /* DetailMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMessage.h; sourceTree = "<group>"; };
+		7D7660EF1CF4ADA5004549A9 /* DetailMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMessage.m; sourceTree = "<group>"; };
 		7D8A88D81BEF98F5003FEF54 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		7D8A88D91BEF98F5003FEF54 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		7D917F3D1BFA13A800F332C2 /* ANRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRImageStore.h; sourceTree = "<group>"; };
@@ -176,6 +182,15 @@
 				7D0D6F291CEF71D400974539 /* Welcome.m */,
 			);
 			name = Welcome;
+			sourceTree = "<group>";
+		};
+		7D147E3E1CF1F13E00F649C5 /* WriteLetter */ = {
+			isa = PBXGroup;
+			children = (
+				7D147E3F1CF1F15B00F649C5 /* WriteLetter.h */,
+				7D147E401CF1F15B00F649C5 /* WriteLetter.m */,
+			);
+			name = WriteLetter;
 			sourceTree = "<group>";
 		};
 		7D21599C1CE63453006D6D42 /* lib */ = {
@@ -257,9 +272,22 @@
 			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
+		7D7660EA1CF4A8F3004549A9 /* ReadLetter */ = {
+			isa = PBXGroup;
+			children = (
+				7D7660EE1CF4ADA5004549A9 /* DetailMessage.h */,
+				7D7660EF1CF4ADA5004549A9 /* DetailMessage.m */,
+				7D7660EB1CF4A960004549A9 /* ReadLetter.h */,
+				7D7660EC1CF4A960004549A9 /* ReadLetter.m */,
+			);
+			name = ReadLetter;
+			sourceTree = "<group>";
+		};
 		7DB8ADE81BF8BAE2009D4193 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7D7660EA1CF4A8F3004549A9 /* ReadLetter */,
+				7D147E3E1CF1F13E00F649C5 /* WriteLetter */,
 				7D0D6F261CEF712800974539 /* Welcome */,
 				7D125A731CD2663E004AC017 /* FriendDetailViewController.h */,
 				7D125A741CD2663E004AC017 /* FriendDetailViewController.m */,
@@ -267,8 +295,6 @@
 				7D13D86B1C429B62004416EF /* ContactViewController.m */,
 				7D13D8671C4293D6004416EF /* AddFriendViewController.h */,
 				7D13D8681C4293D6004416EF /* AddFriendViewController.m */,
-				7D6F5E5D1C2AE909006E1EE6 /* DetailMessageViewController.h */,
-				7D6F5E5E1C2AE909006E1EE6 /* DetailMessageViewController.m */,
 				7D6F5E5A1C2AD598006E1EE6 /* PeopleViewController.h */,
 				7D6F5E5B1C2AD598006E1EE6 /* PeopleViewController.m */,
 				7D4A510D1C2837A800527350 /* MessageTableViewController.h */,
@@ -426,12 +452,13 @@
 				7D4A510F1C2837A800527350 /* MessageTableViewController.m in Sources */,
 				7D13D8691C4293D6004416EF /* AddFriendViewController.m in Sources */,
 				7D4763071BEA4B8D007CF6E6 /* Piece.xcdatamodeld in Sources */,
-				7D6F5E5F1C2AE909006E1EE6 /* DetailMessageViewController.m in Sources */,
 				7D4763011BEA4B8D007CF6E6 /* ViewController.m in Sources */,
 				7D0D6F2A1CEF71D400974539 /* Welcome.m in Sources */,
 				7DBC7D4D1CA18CE800F44B6D /* SearchViewController.m in Sources */,
 				7D6F5E5C1C2AD598006E1EE6 /* PeopleViewController.m in Sources */,
 				7DE50B071BF7895B004E494F /* SimpleHttp.m in Sources */,
+				7D147E411CF1F15B00F649C5 /* WriteLetter.m in Sources */,
+				7D7660ED1CF4A960004549A9 /* ReadLetter.m in Sources */,
 				7DE719E01C4149C900C1AA3E /* FriendTableViewCell.m in Sources */,
 				7DDF4D551CEE1736008BB0FD /* CHKeychain.m in Sources */,
 				7DB8ADE71BF8BAB4009D4193 /* ProfileViewController.m in Sources */,
@@ -439,6 +466,7 @@
 				7D13D86C1C429B62004416EF /* ContactViewController.m in Sources */,
 				7DE083DB1CC9313600E6551C /* Letter.m in Sources */,
 				7D125A751CD2663E004AC017 /* FriendDetailViewController.m in Sources */,
+				7D7660F01CF4ADA5004549A9 /* DetailMessage.m in Sources */,
 				7D4762FE1BEA4B8D007CF6E6 /* AppDelegate.m in Sources */,
 				7D4762FB1BEA4B8D007CF6E6 /* main.m in Sources */,
 				7D526C141BFCB837005D4D1F /* NoteViewController.m in Sources */,
